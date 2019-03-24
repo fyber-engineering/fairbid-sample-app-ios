@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11F8A9432247E91400A816F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9422247E91400A816F2 /* AppDelegate.swift */; };
+		11F8A9452247E91400A816F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9442247E91400A816F2 /* ViewController.swift */; };
+		11F8A9482247E91400A816F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A9462247E91400A816F2 /* Main.storyboard */; };
+		11F8A94A2247E91500A816F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A9492247E91500A816F2 /* Assets.xcassets */; };
+		11F8A94D2247E91500A816F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A94B2247E91500A816F2 /* LaunchScreen.storyboard */; };
+		11F8A9582247E91500A816F2 /* Fyber_FairBidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9572247E91500A816F2 /* Fyber_FairBidTests.swift */; };
+		11F8A9632247E91500A816F2 /* Fyber_FairBidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9622247E91500A816F2 /* Fyber_FairBidUITests.swift */; };
+		5B71D847F9C486F996C05E9D /* libPods-Fyber FairBid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 220F756B7665C6A6EBD177C2 /* libPods-Fyber FairBid.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11F8A9542247E91500A816F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11F8A9372247E91400A816F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11F8A93E2247E91400A816F2;
+			remoteInfo = "Fyber FairBid";
+		};
+		11F8A95F2247E91500A816F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11F8A9372247E91400A816F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11F8A93E2247E91400A816F2;
+			remoteInfo = "Fyber FairBid";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11F8A93F2247E91400A816F2 /* Fyber FairBid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fyber FairBid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F8A9422247E91400A816F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11F8A9442247E91400A816F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11F8A9472247E91400A816F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11F8A9492247E91500A816F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11F8A94C2247E91500A816F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11F8A94E2247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F8A9532247E91500A816F2 /* Fyber FairBidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fyber FairBidTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F8A9572247E91500A816F2 /* Fyber_FairBidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fyber_FairBidTests.swift; sourceTree = "<group>"; };
+		11F8A9592247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F8A95E2247E91500A816F2 /* Fyber FairBidUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fyber FairBidUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F8A9622247E91500A816F2 /* Fyber_FairBidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fyber_FairBidUITests.swift; sourceTree = "<group>"; };
+		11F8A9642247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		220F756B7665C6A6EBD177C2 /* libPods-Fyber FairBid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fyber FairBid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		380B58A929F8204E4CEC1219 /* Pods-Fyber FairBid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fyber FairBid.debug.xcconfig"; path = "Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid.debug.xcconfig"; sourceTree = "<group>"; };
+		B2F697F776F7D25834E2C824 /* Pods-Fyber FairBid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fyber FairBid.release.xcconfig"; path = "Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11F8A93C2247E91400A816F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B71D847F9C486F996C05E9D /* libPods-Fyber FairBid.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F8A9502247E91500A816F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F8A95B2247E91500A816F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11F8A9362247E91400A816F2 = {
+			isa = PBXGroup;
+			children = (
+				11F8A9412247E91400A816F2 /* Fyber FairBid */,
+				11F8A9562247E91500A816F2 /* Fyber FairBidTests */,
+				11F8A9612247E91500A816F2 /* Fyber FairBidUITests */,
+				11F8A9402247E91400A816F2 /* Products */,
+				ED7F5DBC58E9B52268A8B83C /* Pods */,
+				9A140B4555DE3491D2F51FF4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11F8A9402247E91400A816F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11F8A93F2247E91400A816F2 /* Fyber FairBid.app */,
+				11F8A9532247E91500A816F2 /* Fyber FairBidTests.xctest */,
+				11F8A95E2247E91500A816F2 /* Fyber FairBidUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11F8A9412247E91400A816F2 /* Fyber FairBid */ = {
+			isa = PBXGroup;
+			children = (
+				11F8A9422247E91400A816F2 /* AppDelegate.swift */,
+				11F8A9442247E91400A816F2 /* ViewController.swift */,
+				11F8A9462247E91400A816F2 /* Main.storyboard */,
+				11F8A9492247E91500A816F2 /* Assets.xcassets */,
+				11F8A94B2247E91500A816F2 /* LaunchScreen.storyboard */,
+				11F8A94E2247E91500A816F2 /* Info.plist */,
+			);
+			path = "Fyber FairBid";
+			sourceTree = "<group>";
+		};
+		11F8A9562247E91500A816F2 /* Fyber FairBidTests */ = {
+			isa = PBXGroup;
+			children = (
+				11F8A9572247E91500A816F2 /* Fyber_FairBidTests.swift */,
+				11F8A9592247E91500A816F2 /* Info.plist */,
+			);
+			path = "Fyber FairBidTests";
+			sourceTree = "<group>";
+		};
+		11F8A9612247E91500A816F2 /* Fyber FairBidUITests */ = {
+			isa = PBXGroup;
+			children = (
+				11F8A9622247E91500A816F2 /* Fyber_FairBidUITests.swift */,
+				11F8A9642247E91500A816F2 /* Info.plist */,
+			);
+			path = "Fyber FairBidUITests";
+			sourceTree = "<group>";
+		};
+		9A140B4555DE3491D2F51FF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				220F756B7665C6A6EBD177C2 /* libPods-Fyber FairBid.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED7F5DBC58E9B52268A8B83C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				380B58A929F8204E4CEC1219 /* Pods-Fyber FairBid.debug.xcconfig */,
+				B2F697F776F7D25834E2C824 /* Pods-Fyber FairBid.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11F8A93E2247E91400A816F2 /* Fyber FairBid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBid" */;
+			buildPhases = (
+				E9A0FD4265DDD59860DBAA37 /* [CP] Check Pods Manifest.lock */,
+				11F8A93B2247E91400A816F2 /* Sources */,
+				11F8A93C2247E91400A816F2 /* Frameworks */,
+				11F8A93D2247E91400A816F2 /* Resources */,
+				A415FC57FF28C3BC30AFADAE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fyber FairBid";
+			productName = "Fyber FairBid";
+			productReference = 11F8A93F2247E91400A816F2 /* Fyber FairBid.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11F8A9522247E91500A816F2 /* Fyber FairBidTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11F8A96A2247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBidTests" */;
+			buildPhases = (
+				11F8A94F2247E91500A816F2 /* Sources */,
+				11F8A9502247E91500A816F2 /* Frameworks */,
+				11F8A9512247E91500A816F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11F8A9552247E91500A816F2 /* PBXTargetDependency */,
+			);
+			name = "Fyber FairBidTests";
+			productName = "Fyber FairBidTests";
+			productReference = 11F8A9532247E91500A816F2 /* Fyber FairBidTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11F8A95D2247E91500A816F2 /* Fyber FairBidUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11F8A96D2247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBidUITests" */;
+			buildPhases = (
+				11F8A95A2247E91500A816F2 /* Sources */,
+				11F8A95B2247E91500A816F2 /* Frameworks */,
+				11F8A95C2247E91500A816F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11F8A9602247E91500A816F2 /* PBXTargetDependency */,
+			);
+			name = "Fyber FairBidUITests";
+			productName = "Fyber FairBidUITests";
+			productReference = 11F8A95E2247E91500A816F2 /* Fyber FairBidUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11F8A9372247E91400A816F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Fyber;
+				TargetAttributes = {
+					11F8A93E2247E91400A816F2 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					11F8A9522247E91500A816F2 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 11F8A93E2247E91400A816F2;
+					};
+					11F8A95D2247E91500A816F2 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 11F8A93E2247E91400A816F2;
+					};
+				};
+			};
+			buildConfigurationList = 11F8A93A2247E91400A816F2 /* Build configuration list for PBXProject "Fyber FairBid" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11F8A9362247E91400A816F2;
+			productRefGroup = 11F8A9402247E91400A816F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11F8A93E2247E91400A816F2 /* Fyber FairBid */,
+				11F8A9522247E91500A816F2 /* Fyber FairBidTests */,
+				11F8A95D2247E91500A816F2 /* Fyber FairBidUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11F8A93D2247E91400A816F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F8A94D2247E91500A816F2 /* LaunchScreen.storyboard in Resources */,
+				11F8A94A2247E91500A816F2 /* Assets.xcassets in Resources */,
+				11F8A9482247E91400A816F2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F8A9512247E91500A816F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F8A95C2247E91500A816F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A415FC57FF28C3BC30AFADAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-resources.sh",
+				"${PODS_ROOT}/Heyzap/heyzap-ads-sdk-9.54.1/ios-sdk/IASDKResources.bundle",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Internal/Common/MPAdBrowserController.xib",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCountdownTimer.html",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MRAID.bundle",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPAdapters.plist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IASDKResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPAdBrowserController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseButtonX.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseButtonX@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseButtonX@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCountdownTimer.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPDAAIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPDAAIcon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPDAAIcon@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPMutedBtn.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPMutedBtn@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPMutedBtn@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPPlayBtn.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPPlayBtn@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPPlayBtn@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPUnmutedBtn.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPUnmutedBtn@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPUnmutedBtn@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MRAID.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPAdapters.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9A0FD4265DDD59860DBAA37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fyber FairBid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11F8A93B2247E91400A816F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F8A9452247E91400A816F2 /* ViewController.swift in Sources */,
+				11F8A9432247E91400A816F2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F8A94F2247E91500A816F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F8A9582247E91500A816F2 /* Fyber_FairBidTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F8A95A2247E91500A816F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F8A9632247E91500A816F2 /* Fyber_FairBidUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11F8A9552247E91500A816F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11F8A93E2247E91400A816F2 /* Fyber FairBid */;
+			targetProxy = 11F8A9542247E91500A816F2 /* PBXContainerItemProxy */;
+		};
+		11F8A9602247E91500A816F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11F8A93E2247E91400A816F2 /* Fyber FairBid */;
+			targetProxy = 11F8A95F2247E91500A816F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11F8A9462247E91400A816F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11F8A9472247E91400A816F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11F8A94B2247E91500A816F2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11F8A94C2247E91500A816F2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11F8A9652247E91500A816F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11F8A9662247E91500A816F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11F8A9682247E91500A816F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 380B58A929F8204E4CEC1219 /* Pods-Fyber FairBid.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P65VEJ9422;
+				INFOPLIST_FILE = "Fyber FairBid/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBid";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11F8A9692247E91500A816F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F697F776F7D25834E2C824 /* Pods-Fyber FairBid.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P65VEJ9422;
+				INFOPLIST_FILE = "Fyber FairBid/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBid";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		11F8A96B2247E91500A816F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P65VEJ9422;
+				INFOPLIST_FILE = "Fyber FairBidTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBidTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fyber FairBid.app/Fyber FairBid";
+			};
+			name = Debug;
+		};
+		11F8A96C2247E91500A816F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P65VEJ9422;
+				INFOPLIST_FILE = "Fyber FairBidTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBidTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fyber FairBid.app/Fyber FairBid";
+			};
+			name = Release;
+		};
+		11F8A96E2247E91500A816F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P65VEJ9422;
+				INFOPLIST_FILE = "Fyber FairBidUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBidUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fyber FairBid";
+			};
+			name = Debug;
+		};
+		11F8A96F2247E91500A816F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P65VEJ9422;
+				INFOPLIST_FILE = "Fyber FairBidUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBidUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fyber FairBid";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11F8A93A2247E91400A816F2 /* Build configuration list for PBXProject "Fyber FairBid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F8A9652247E91500A816F2 /* Debug */,
+				11F8A9662247E91500A816F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F8A9682247E91500A816F2 /* Debug */,
+				11F8A9692247E91500A816F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11F8A96A2247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBidTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F8A96B2247E91500A816F2 /* Debug */,
+				11F8A96C2247E91500A816F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11F8A96D2247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBidUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F8A96E2247E91500A816F2 /* Debug */,
+				11F8A96F2247E91500A816F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11F8A9372247E91400A816F2 /* Project object */;
+}

@@ -1,7 +1,7 @@
 platform :ios, '8.0'
 
-target 'fairbid-sample' do
-	pod `Heyzap`, `9.54.1` 
+target 'Fyber FairBid' do
+	pod 'Heyzap', '9.54.1' 
 
 	pod 'mopub-ios-sdk', '5.5.0', :inhibit_warnings => true
 	pod 'Google-Mobile-Ads-SDK', '7.42.0'
