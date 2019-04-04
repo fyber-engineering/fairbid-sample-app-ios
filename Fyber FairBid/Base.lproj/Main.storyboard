@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,90 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Fyber_FairBid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fyber Sample App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYo-vq-yBf">
+                                <rect key="frame" x="14" y="56" width="275" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ada-5z-UU0">
+                                <rect key="frame" x="0.0" y="151" width="414" height="662"/>
+                                <color key="backgroundColor" white="0.93417402630000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ad Cell" id="vVR-6U-jdf" customClass="HeadlineTableViewCell" customModule="Fyber_FairBid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vVR-6U-jdf" id="hA9-8h-VeX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-x7-3Py">
+                                                    <rect key="frame" x="14" y="9" width="40" height="51"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="51" id="bkW-9A-A8o"/>
+                                                        <constraint firstAttribute="width" constant="40" id="xf3-Yi-SjS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4U-R6-m9R">
+                                                    <rect key="frame" x="67" y="24" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="D4U-R6-m9R" firstAttribute="top" secondItem="hA9-8h-VeX" secondAttribute="top" constant="24" id="2yW-LS-krX"/>
+                                                <constraint firstItem="eEM-x7-3Py" firstAttribute="top" secondItem="hA9-8h-VeX" secondAttribute="top" constant="9" id="6YG-LJ-tzV"/>
+                                                <constraint firstAttribute="bottom" secondItem="eEM-x7-3Py" secondAttribute="bottom" constant="9" id="7Cb-hj-T4e"/>
+                                                <constraint firstAttribute="bottom" secondItem="D4U-R6-m9R" secondAttribute="bottom" constant="24" id="7Of-mp-gmI"/>
+                                                <constraint firstItem="D4U-R6-m9R" firstAttribute="leading" secondItem="eEM-x7-3Py" secondAttribute="trailing" constant="13" id="9eB-BB-9i9"/>
+                                                <constraint firstItem="eEM-x7-3Py" firstAttribute="leading" secondItem="hA9-8h-VeX" secondAttribute="leading" constant="14" id="CfA-Pa-wKj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="unitImage" destination="eEM-x7-3Py" id="yod-1x-qxp"/>
+                                            <outlet property="unitLabel" destination="D4U-R6-m9R" id="GYJ-yq-dU3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fyber FairBid v2.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqM-ac-spR">
+                                <rect key="frame" x="14" y="106" width="163.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VYo-vq-yBf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="2tv-BT-aEt"/>
+                            <constraint firstItem="ada-5z-UU0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CjA-AW-qRD"/>
+                            <constraint firstItem="ada-5z-UU0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Nf6-Wl-cT8"/>
+                            <constraint firstItem="DqM-ac-spR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="R9g-IL-oN3"/>
+                            <constraint firstItem="DqM-ac-spR" firstAttribute="top" secondItem="VYo-vq-yBf" secondAttribute="bottom" constant="8" id="Ryb-P6-e1w"/>
+                            <constraint firstItem="ada-5z-UU0" firstAttribute="top" secondItem="DqM-ac-spR" secondAttribute="bottom" constant="24" id="SGA-xb-u72"/>
+                            <constraint firstItem="VYo-vq-yBf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="dhi-ba-NHm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ada-5z-UU0" secondAttribute="bottom" id="e0K-2h-O1N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="adUnitsTable" destination="ada-5z-UU0" id="PTZ-c0-cDf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="166.66666666666669" y="-30.133928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="banner_icon.png" width="132" height="171"/>
+    </resources>
 </document>

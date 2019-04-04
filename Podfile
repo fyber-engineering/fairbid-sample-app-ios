@@ -4,7 +4,7 @@ target 'Fyber FairBid' do
 	pod 'FairBidSDK', '2.0.0' 
 
 	pod 'mopub-ios-sdk', '5.5.0', :inhibit_warnings => true
-	pod 'Google-Mobile-Ads-SDK', '7.42.0'
+
 end
 
 post_install do |installer|
