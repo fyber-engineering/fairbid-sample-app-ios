@@ -15,26 +15,34 @@ class HeadlineTableViewCell: UITableViewCell {
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var adUnitsTable: UITableView!
     private var unitNames: [String] = []
     private var unitImageNames: [String] = []
+
+    // MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         adUnitsTable.delegate = self
         adUnitsTable.dataSource = self
+        
         unitNames = ["Interstitial", "Rewarded", "Banner", "", "Test Suite"]
         unitImageNames = ["interstitial_icon", "rewarded_icon", "banner_icon", "" ,"test_suite"]
+        
         adUnitsTable.tableFooterView = (UIView(frame: CGRect.zero))
-        adUnitsTable.layer.borderWidth = 1.0
+
     }
+    
+    // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Ad Cell")! as! HeadlineTableViewCell
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "Ad Cell")! as! HeadlineTableViewCell
         let text = unitNames[indexPath.row]
         let image = UIImage(named: unitImageNames[indexPath.row])
         
@@ -43,13 +51,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if indexPath.row == 3 {
             cell.unitLabel?.text = ""
             cell.unitImage.image = nil
+            cell.accessoryType = .none
+            cell.isUserInteractionEnabled = false
+        } else if indexPath.row == 4 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "Test Suite Cell")! as! HeadlineTableViewCell
         } else {
-            cell.accessoryType = .disclosureIndicator
             cell.unitImage.image = image
         }
         return cell
     }
     
+    // MARK: - UITableViewDelegate
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == 3 {
             cell.backgroundColor = self.view.backgroundColor
@@ -63,6 +76,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return 40
         } else {
             return 80
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "select ad") {
+            let adVC = segue.destination as! AdsScreenViewController
+            var adType = String()
+
+            if let indexPath = adUnitsTable.indexPathForSelectedRow {
+                
+                switch indexPath.row {
+                    case 0:
+                        adType = "Interstitial"
+                    case 1:
+                        adType = "Rewarded"
+                    case 2:
+                        adType = "Banner"
+                    case 4:
+                        adType = "Test Suite"
+                    default:
+                        adType = ""
+                }
+            }
+            adVC.adType = adType
         }
     }
 }

@@ -19,31 +19,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fyber Sample App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYo-vq-yBf">
-                                <rect key="frame" x="14" y="56" width="275" height="42"/>
+                                <rect key="frame" x="69.5" y="36" width="275" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ada-5z-UU0">
-                                <rect key="frame" x="0.0" y="151" width="414" height="662"/>
-                                <color key="backgroundColor" white="0.93417402630000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ada-5z-UU0">
+                                <rect key="frame" x="0.0" y="131" width="414" height="765"/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ad Cell" id="vVR-6U-jdf" customClass="HeadlineTableViewCell" customModule="Fyber_FairBid" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Ad Cell" id="vVR-6U-jdf" customClass="HeadlineTableViewCell" customModule="Fyber_FairBid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vVR-6U-jdf" id="hA9-8h-VeX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vVR-6U-jdf" id="hA9-8h-VeX">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-x7-3Py">
+                                                <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-x7-3Py">
                                                     <rect key="frame" x="14" y="9" width="40" height="51"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="51" id="bkW-9A-A8o"/>
                                                         <constraint firstAttribute="width" constant="40" id="xf3-Yi-SjS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4U-R6-m9R">
-                                                    <rect key="frame" x="67" y="24" width="42" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4U-R6-m9R">
+                                                    <rect key="frame" x="67" y="24" width="57" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -62,12 +62,49 @@
                                         <connections>
                                             <outlet property="unitImage" destination="eEM-x7-3Py" id="yod-1x-qxp"/>
                                             <outlet property="unitLabel" destination="D4U-R6-m9R" id="GYJ-yq-dU3"/>
+                                            <segue destination="wqS-W9-J4F" kind="show" identifier="select ad" id="QWL-X6-bFf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Test Suite Cell" id="wv7-RL-tox" customClass="HeadlineTableViewCell" customModule="Fyber_FairBid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="98" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wv7-RL-tox" id="XtD-yI-mg5">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="2oS-2a-7fe">
+                                                    <rect key="frame" x="14" y="9" width="40" height="51"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="Laq-re-vgd"/>
+                                                        <constraint firstAttribute="height" constant="51" id="mvx-gd-21G"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Suite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdJ-gn-nA8">
+                                                    <rect key="frame" x="67" y="24" width="76" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kdJ-gn-nA8" firstAttribute="top" secondItem="XtD-yI-mg5" secondAttribute="top" constant="24" id="JgF-yK-zyQ"/>
+                                                <constraint firstItem="kdJ-gn-nA8" firstAttribute="leading" secondItem="2oS-2a-7fe" secondAttribute="trailing" constant="13" id="MEg-ix-B1W"/>
+                                                <constraint firstItem="2oS-2a-7fe" firstAttribute="top" secondItem="XtD-yI-mg5" secondAttribute="top" constant="9" id="XMw-KZ-RXz"/>
+                                                <constraint firstAttribute="bottom" secondItem="2oS-2a-7fe" secondAttribute="bottom" constant="9" id="a0E-7v-akW"/>
+                                                <constraint firstItem="2oS-2a-7fe" firstAttribute="leading" secondItem="XtD-yI-mg5" secondAttribute="leading" constant="14" id="bmT-js-VU0"/>
+                                                <constraint firstAttribute="bottom" secondItem="kdJ-gn-nA8" secondAttribute="bottom" constant="24" id="cO1-MX-amj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="unitImage" destination="2oS-2a-7fe" id="Vnn-AB-O9u"/>
+                                            <outlet property="unitLabel" destination="kdJ-gn-nA8" id="pt4-gj-4Cv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fyber FairBid v2.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqM-ac-spR">
-                                <rect key="frame" x="14" y="106" width="163.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fyber FairBid 2.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqM-ac-spR">
+                                <rect key="frame" x="130" y="86" width="154" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -75,25 +112,57 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VYo-vq-yBf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="2tv-BT-aEt"/>
-                            <constraint firstItem="ada-5z-UU0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CjA-AW-qRD"/>
-                            <constraint firstItem="ada-5z-UU0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Nf6-Wl-cT8"/>
-                            <constraint firstItem="DqM-ac-spR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="R9g-IL-oN3"/>
+                            <constraint firstItem="VYo-vq-yBf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="36" id="2tv-BT-aEt"/>
+                            <constraint firstItem="DqM-ac-spR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7IX-bM-s1x"/>
+                            <constraint firstItem="ada-5z-UU0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CjA-AW-qRD"/>
+                            <constraint firstItem="ada-5z-UU0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Nf6-Wl-cT8"/>
                             <constraint firstItem="DqM-ac-spR" firstAttribute="top" secondItem="VYo-vq-yBf" secondAttribute="bottom" constant="8" id="Ryb-P6-e1w"/>
                             <constraint firstItem="ada-5z-UU0" firstAttribute="top" secondItem="DqM-ac-spR" secondAttribute="bottom" constant="24" id="SGA-xb-u72"/>
-                            <constraint firstItem="VYo-vq-yBf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="dhi-ba-NHm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ada-5z-UU0" secondAttribute="bottom" id="e0K-2h-O1N"/>
+                            <constraint firstAttribute="bottom" secondItem="ada-5z-UU0" secondAttribute="bottom" id="e0K-2h-O1N"/>
+                            <constraint firstItem="VYo-vq-yBf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yMX-pe-tlE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="arv-yC-zpT"/>
                     </view>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="adUnitsTable" destination="ada-5z-UU0" id="PTZ-c0-cDf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166.66666666666669" y="-30.133928571428569"/>
+            <point key="canvasLocation" x="1076.8115942028987" y="-30.133928571428569"/>
+        </scene>
+        <!--Ads Screen View Controller-->
+        <scene sceneID="VWH-Xg-WKx">
+            <objects>
+                <viewController id="wqS-W9-J4F" customClass="AdsScreenViewController" customModule="Fyber_FairBid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wk0-FA-POS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnL-Ns-Be9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="brJ-tV-52u">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="KXm-m7-GJX">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="rsE-yE-wWQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="iuy-J6-1nr"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="dnL-Ns-Be9" id="dk4-db-J5c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UwI-vD-R4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.449275362319" y="-33.482142857142854"/>
         </scene>
     </scenes>
     <resources>
