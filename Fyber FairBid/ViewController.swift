@@ -34,31 +34,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
-    // MARK: - UITableViewDataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Ad Cell")! as! HeadlineTableViewCell
-        let text = unitNames[indexPath.row]
-        let image = UIImage(named: unitImageNames[indexPath.row])
-        
-        cell.unitLabel?.text = text
-        cell.unitLabel.sizeToFit()
-        if indexPath.row == 3 {
-            cell.unitLabel?.text = ""
-            cell.unitImage.image = nil
-            cell.accessoryType = .none
-            cell.isUserInteractionEnabled = false
-        } else if indexPath.row == 4 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "Test Suite Cell")! as! HeadlineTableViewCell
-        } else {
-            cell.unitImage.image = image
-        }
-        return cell
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // MARK: - UITableViewDelegate
@@ -101,6 +84,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             adVC.adType = adType
         }
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "Ad Cell")! as! HeadlineTableViewCell
+        let text = unitNames[indexPath.row]
+        let image = UIImage(named: unitImageNames[indexPath.row])
+        
+        cell.unitLabel?.text = text
+        cell.unitLabel.sizeToFit()
+        if indexPath.row == 3 {
+            cell.unitLabel?.text = ""
+            cell.unitImage.image = nil
+            cell.accessoryType = .none
+            cell.isUserInteractionEnabled = false
+        } else if indexPath.row == 4 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "Test Suite Cell")! as! HeadlineTableViewCell
+            cell.unitImage.image = image
+        } else {
+            cell.unitImage.image = image
+        }
+        return cell
     }
 }
 

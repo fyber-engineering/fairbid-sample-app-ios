@@ -20,7 +20,6 @@
 		2A528C30225640EC00AD37E7 /* test_suite.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C2F225640EC00AD37E7 /* test_suite.png */; };
 		2A528C3C22564EE800AD37E7 /* Fyber Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C3B22564EE700AD37E7 /* Fyber Logo.png */; };
 		2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */; };
-		2A528C65225A4FBB00AD37E7 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C64225A4FBB00AD37E7 /* back.png */; };
 		5B71D847F9C486F996C05E9D /* libPods-Fyber FairBid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 220F756B7665C6A6EBD177C2 /* libPods-Fyber FairBid.a */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		2A528C2F225640EC00AD37E7 /* test_suite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_suite.png; sourceTree = "<group>"; };
 		2A528C3B22564EE700AD37E7 /* Fyber Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fyber Logo.png"; sourceTree = "<group>"; };
 		2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewController.swift; sourceTree = "<group>"; };
-		2A528C64225A4FBB00AD37E7 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		380B58A929F8204E4CEC1219 /* Pods-Fyber FairBid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fyber FairBid.debug.xcconfig"; path = "Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid.debug.xcconfig"; sourceTree = "<group>"; };
 		B2F697F776F7D25834E2C824 /* Pods-Fyber FairBid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fyber FairBid.release.xcconfig"; path = "Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +154,6 @@
 				2A528C232255FE0100AD37E7 /* rewarded_icon.png */,
 				2A528C2F225640EC00AD37E7 /* test_suite.png */,
 				2A528C3B22564EE700AD37E7 /* Fyber Logo.png */,
-				2A528C64225A4FBB00AD37E7 /* back.png */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -286,7 +283,6 @@
 			files = (
 				2A528C242255FE0100AD37E7 /* banner_icon.png in Resources */,
 				2A528C30225640EC00AD37E7 /* test_suite.png in Resources */,
-				2A528C65225A4FBB00AD37E7 /* back.png in Resources */,
 				2A528C3C22564EE800AD37E7 /* Fyber Logo.png in Resources */,
 				11F8A94D2247E91500A816F2 /* LaunchScreen.storyboard in Resources */,
 				2A528C262255FE0100AD37E7 /* rewarded_icon.png in Resources */,
