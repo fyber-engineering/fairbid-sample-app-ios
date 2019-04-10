@@ -1,30 +1,16 @@
 PODS:
   - FairBidSDK (2.0.0)
-  - mopub-ios-sdk (5.5.0):
-    - mopub-ios-sdk/MoPubSDK (= 5.5.0)
-  - mopub-ios-sdk/Avid (5.5.0):
-    - mopub-ios-sdk/Core
-  - mopub-ios-sdk/Core (5.5.0)
-  - mopub-ios-sdk/Moat (5.5.0):
-    - mopub-ios-sdk/Core
-  - mopub-ios-sdk/MoPubSDK (5.5.0):
-    - mopub-ios-sdk/Avid
-    - mopub-ios-sdk/Core
-    - mopub-ios-sdk/Moat
 
 DEPENDENCIES:
   - FairBidSDK (= 2.0.0)
-  - mopub-ios-sdk (= 5.5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FairBidSDK
-    - mopub-ios-sdk
 
 SPEC CHECKSUMS:
   FairBidSDK: a8413ce367b7a2d71dca523a51bebf67fbb7298d
-  mopub-ios-sdk: 937b82dd76d8a396ba6a22ae005a1e24c61bf28b
 
-PODFILE CHECKSUM: 9d794baa1650fb0995074a575535083182493f73
+PODFILE CHECKSUM: 5650a4a44cc512c896f47f4c9d469c540357c8f1
 
 COCOAPODS: 1.6.1

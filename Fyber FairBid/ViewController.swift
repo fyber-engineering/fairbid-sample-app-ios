@@ -6,6 +6,7 @@
 //  Copyright © 2019 Fyber. All rights reserved.
 //
 
+
 import UIKit
 
 class HeadlineTableViewCell: UITableViewCell {
@@ -15,7 +16,6 @@ class HeadlineTableViewCell: UITableViewCell {
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var adUnitsTable: UITableView!
     private var unitNames: [String] = []
     private var unitImageNames: [String] = []
@@ -31,7 +31,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         unitImageNames = ["interstitial_icon", "rewarded_icon", "banner_icon", "" ,"test_suite"]
         
         adUnitsTable.tableFooterView = (UIView(frame: CGRect.zero))
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +82,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
             adVC.adType = adType
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 4) {
+            FairBid.presentTestSuite()
         }
     }
     

@@ -196,7 +196,7 @@
                                 </connections>
                             </button>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QnB-Yt-QpC">
-                                <rect key="frame" x="20" y="284" width="374" height="504"/>
+                                <rect key="frame" x="20" y="284" width="374" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Callback cell" id="J2T-Kb-mGr">
@@ -239,7 +239,7 @@
                             <constraint firstItem="fC5-K7-LU1" firstAttribute="leading" secondItem="z2x-xy-0qc" secondAttribute="trailing" constant="8" id="Wgk-tw-uo3"/>
                             <constraint firstItem="TYj-WE-BN7" firstAttribute="width" secondItem="Ujh-ZU-dus" secondAttribute="width" id="Wxk-qI-apE"/>
                             <constraint firstItem="F36-zn-fsg" firstAttribute="top" secondItem="z2x-xy-0qc" secondAttribute="top" id="aVl-D2-b2z"/>
-                            <constraint firstItem="eIE-aN-usK" firstAttribute="top" secondItem="QnB-Yt-QpC" secondAttribute="bottom" constant="18" id="dDu-uO-lKo"/>
+                            <constraint firstItem="eIE-aN-usK" firstAttribute="top" secondItem="QnB-Yt-QpC" secondAttribute="bottom" constant="55" id="dDu-uO-lKo"/>
                             <constraint firstItem="TYj-WE-BN7" firstAttribute="top" secondItem="iuy-J6-1nr" secondAttribute="top" constant="100" id="eZ6-Zf-LBD"/>
                             <constraint firstItem="eIE-aN-usK" firstAttribute="centerX" secondItem="wk0-FA-POS" secondAttribute="centerX" id="hf5-AV-UXq"/>
                             <constraint firstItem="fC5-K7-LU1" firstAttribute="bottom" secondItem="z2x-xy-0qc" secondAttribute="bottom" id="la5-Vh-xlL"/>
