@@ -15,14 +15,19 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     
     private var banner : FYBBannerView?
     public var adType: String!
-    private var amountOfCallbacks: Int = 1
     @IBOutlet weak var unitImage: UIImageView!
     @IBOutlet weak var placmentIdLabel: UILabel!
     @IBOutlet weak var requestButton: UIButton!
     @IBOutlet weak var showButton: UIButton!
     @IBOutlet weak var callBacksTableView: UITableView!
+    @IBOutlet weak var cleanCallbacksButton: UIButton!
+    @IBOutlet weak var bannerView: UIView!
+    @IBOutlet weak var callbackLabel: UILabel!
+    @IBOutlet weak var seperator: UIView!
     
     private var unitImageNames: [String] = []
+    private var callbackStrings: [String] = []
+
 
     // MARK: - View lifecycle
 
@@ -49,10 +54,17 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
             image = UIImage(named: unitImageNames[0])!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
+            if (FYBInterstitial.isAvailable("InterstitialPlacementIdExample")) {
+                adIsAvailable()
+            }
+            bannerView.removeFromSuperview()
         } else if adType == "Rewarded" {
             image = UIImage(named: unitImageNames[1])!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
+            if (FYBRewarded.isAvailable("InterstitialPlacementIdExample")) {
+                adIsAvailable()
+            }
         } else {
             image = UIImage(named: unitImageNames[2])!
             requestButton.setTitle("Show", for: .normal)
@@ -65,12 +77,14 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     // MARK: - UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return amountOfCallbacks
+        return callbackStrings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Callback cell")!
-        cell.textLabel?.text = "alan"
+        if (callbackStrings.count > indexPath.row) {
+            cell.textLabel?.text = callbackStrings[indexPath.row]
+        }
         return cell
     }
     
@@ -83,11 +97,11 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
             let bannerOptions = FYBBannerOptions()
 
             bannerOptions.placementName = "BannerPlacementIdExample"
-            FYBBanner.place(in: view, position: .bottom, options: bannerOptions)
+            FYBBanner.place(in: bannerView, position: .top, options: bannerOptions)
         }
         fetchingInProgress()
     }
-    @IBAction func showAdClicked(_ sender: Any) {
+    @IBAction func showOrDestroyAdClicked(_ sender: Any) {
         if adType == "Interstitial" {
             FYBInterstitial.show("InterstitialPlacementIdExample")
         } else if adType == "Rewarded" {
@@ -99,7 +113,12 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     }
     
     @IBAction func cleanAndHideCallbackList(_ sender: Any) {
-    
+        callbackStrings = []
+        callBacksTableView.reloadData()
+        callBacksTableView.isHidden = true
+        cleanCallbacksButton.isHidden = true
+        callbackLabel.isHidden = true
+        seperator.isHidden = true
     }
     
     // MARK: - Service
@@ -123,77 +142,147 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         showButton.backgroundColor = disabledColor
     }
     
-//    addEventToCallbacksList(_ )
+    func addEventToCallbacksList(_ callback: String) {
+        callbackStrings.append(stringFromDate(Date()) + " " + callback)
+        callBacksTableView.reloadData()
+        scrollToBottom()
+        callBacksTableView.isHidden = false
+        cleanCallbacksButton.isHidden = false
+        callbackLabel.isHidden = false
+        seperator.isHidden = false
 
+    }
+    
+    func stringFromDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        return formatter.string(from: date)
+    }
+
+    func scrollToBottom(){
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: self.callbackStrings.count-1, section: 0)
+            self.callBacksTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
 
     // MARK: - FYBInterstitialDelegate
 
     func interstitialIsAvailable(_ placementName: String) {
+        addEventToCallbacksList(#function)
         adIsAvailable()
     }
     
     func interstitialIsUnavailable(_ placementName: String) {
         adDismissed()
+        addEventToCallbacksList(#function)
     }
     
-    func interstitialDidShow(_ placementName: String) {}
+    func interstitialDidShow(_ placementName: String) {
+        addEventToCallbacksList(#function)
+    }
     
-    func interstitialDidFail(toShow placementName: String, withError error: Error) {}
+    func interstitialDidFail(toShow placementName: String, withError error: Error) {
+        addEventToCallbacksList(#function)
+    }
     
-    func interstitialDidClick(_ placementName: String) {}
+    func interstitialDidClick(_ placementName: String) {
+        addEventToCallbacksList(#function)
+    }
     
     func interstitialDidDismiss(_ placementName: String) {
         adDismissed()
+        addEventToCallbacksList(#function)
     }
     
-    func interstitialWillStartAudio() {}
+    func interstitialWillStartAudio() {
+        addEventToCallbacksList(#function)
+    }
     
-    func interstitialDidFinishAudio() {}
+    func interstitialDidFinishAudio() {
+        addEventToCallbacksList(#function)
+    }
     
     // MARK: - FYBRewardedDelegate
     
     func rewardedIsAvailable(_ placementName: String) {
         adIsAvailable()
+        addEventToCallbacksList(#function)
     }
     
     func rewardedIsUnavailable(_ placementName: String) {
         adDismissed()
+        addEventToCallbacksList(#function)
     }
     
-    func rewardedDidShow(_ placementName: String) {}
+    func rewardedDidShow(_ placementName: String) {
+        addEventToCallbacksList(#function)
+    }
     
-    func rewardedDidFail(toShow placementName: String, withError error: Error) {}
+    func rewardedDidFail(toShow placementName: String, withError error: Error) {
+        addEventToCallbacksList(#function)
+    }
     
-    func rewardedDidClick(_ placementName: String) {}
+    func rewardedDidClick(_ placementName: String) {
+        addEventToCallbacksList(#function)
+    }
     
-    func rewardedDidComplete(_ placementName: String, userRewarded: Bool) {}
+    func rewardedDidComplete(_ placementName: String, userRewarded: Bool) {
+        addEventToCallbacksList(#function)
+    }
     
     func rewardedDidDismiss(_ placementName: String) {
         adDismissed()
+        addEventToCallbacksList(#function)
     }
     
-    func rewardedWillStartAudio() {}
+    func rewardedWillStartAudio() {
+        addEventToCallbacksList(#function)
+    }
     
-    func rewardedDidFinishAudio() {}
+    func rewardedDidFinishAudio() {
+        addEventToCallbacksList(#function)
+    }
     
     // MARK: - FYBBannerDelegate
     
     func bannerDidLoad(_ banner: FYBBannerView) {
         self.banner = banner
         adIsAvailable()
+        addEventToCallbacksList(#function)
     }
     
-    func bannerDidFail(toLoad placementName: String, withError error: Error) {}
+    func bannerDidFail(toLoad placementName: String, withError error: Error) {
+        addEventToCallbacksList(#function)
+    }
     
-    func bannerDidShow(_ banner: FYBBannerView) {}
+    func bannerDidShow(_ banner: FYBBannerView) {
+        addEventToCallbacksList(#function)
+    }
     
-    func bannerDidClick(_ banner: FYBBannerView) {}
+    func bannerDidClick(_ banner: FYBBannerView) {
+        addEventToCallbacksList(#function)
+    }
     
-    func bannerWillPresentModalView(_ banner: FYBBannerView) {}
+    func bannerWillPresentModalView(_ banner: FYBBannerView) {
+        addEventToCallbacksList(#function)
+    }
     
-    func bannerDidDismissModalView(_ banner: FYBBannerView) {}
+    func bannerDidDismissModalView(_ banner: FYBBannerView) {
+        addEventToCallbacksList(#function)
+    }
     
-    func bannerWillLeaveApplication(_ banner: FYBBannerView) {}
+    func bannerWillLeaveApplication(_ banner: FYBBannerView) {
+        addEventToCallbacksList(#function)
+    }
     
-    func banner(_ banner: FYBBannerView, didResizeToFrame frame: CGRect) {}
+    func banner(_ banner: FYBBannerView, didResizeToFrame frame: CGRect) {
+        addEventToCallbacksList(#function)
+    }
+    
+    // MARK: - deinit
+
+    deinit {
+//        cleanCallbacksButton.isHidden = true
+    }
 }
