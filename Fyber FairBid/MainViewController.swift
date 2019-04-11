@@ -17,18 +17,18 @@ class HeadlineTableViewCell: UITableViewCell {
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var adUnitsTable: UITableView!
+    @IBOutlet weak var versionLabel: UILabel!
+    
     private let unitNames: [String] = ["Interstitial", "Rewarded", "Banner", "", "Test Suite"]
     
-    
-
     // MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         adUnitsTable.delegate = self
         adUnitsTable.dataSource = self
-        
         adUnitsTable.tableFooterView = (UIView(frame: CGRect.zero))
+        versionLabel.text = "Fyber FairBid " + FairBid.version()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FairBid.start(withAppId: "109613")
-
+        let options = FYBOptions()
+        
+        options.autoRequestingEnabled = false
+        FairBid.start(withAppId: "109613",options: options)
         return true
     }
 

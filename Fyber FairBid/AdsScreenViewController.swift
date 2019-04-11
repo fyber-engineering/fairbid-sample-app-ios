@@ -37,6 +37,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     @IBOutlet weak var bannerView: UIView!
     @IBOutlet weak var seperator: UIView!
 
+    @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     private var callbackStrings: [String] = []
 
 
@@ -101,6 +102,8 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         return cell
     }
     
+    // MARK: - Service
+
     @IBAction func requestAdClicked(_ sender: Any) {
         if adType == Consts.interstitialUnit {
             FYBInterstitial.request(interstitialPlacementID)
@@ -134,8 +137,6 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         seperator.isHidden = true
     }
     
-    // MARK: - Service
-
     func fetchingInProgress() {
         requestButton.setTitleColor(UIColor.clear, for: .normal)
         requestButton.isEnabled = false
@@ -181,10 +182,8 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     }
 
     func scrollToBottom(){
-        DispatchQueue.main.async {
-            let indexPath = IndexPath(row: self.callbackStrings.count-1, section: 0)
-            self.callBacksTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-        }
+        let indexPath = IndexPath(row: callbackStrings.count - 1, section: 0)
+        self.callBacksTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
     func currentAdEquals(_ adType: String) -> Bool {
@@ -227,7 +226,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     
     func interstitialDidDismiss(_ placementName: String) {
         if currentAdEquals(Consts.interstitialUnit) {
-            fetchingInProgress()
+            adDismissed()
             addEventToCallbacksList(#function)
         }
     }
@@ -286,7 +285,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     
     func rewardedDidDismiss(_ placementName: String) {
         if currentAdEquals(Consts.rewardedUnit) {
-            fetchingInProgress()
+            adDismissed()
             addEventToCallbacksList(#function)
         }
     }
@@ -308,6 +307,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     func bannerDidLoad(_ banner: FYBBannerView) {
         if currentAdEquals(Consts.bannerUnit) {
             self.banner = banner
+            bannerHeight.constant = banner.bounds.height + 20
             adIsAvailable()
             addEventToCallbacksList(#function)
         }
