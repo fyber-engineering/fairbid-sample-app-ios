@@ -17,8 +17,9 @@ class HeadlineTableViewCell: UITableViewCell {
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var adUnitsTable: UITableView!
-    private var unitNames: [String] = []
-    private var unitImageNames: [String] = []
+    private let unitNames: [String] = ["Interstitial", "Rewarded", "Banner", "", "Test Suite"]
+    
+    
 
     // MARK: - View lifecycle
 
@@ -26,9 +27,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         adUnitsTable.delegate = self
         adUnitsTable.dataSource = self
-        
-        unitNames = ["Interstitial", "Rewarded", "Banner", "", "Test Suite"]
-        unitImageNames = ["interstitial_icon", "rewarded_icon", "banner_icon", "" ,"test_suite"]
         
         adUnitsTable.tableFooterView = (UIView(frame: CGRect.zero))
     }
@@ -70,13 +68,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 switch indexPath.row {
                     case 0:
-                        adType = "Interstitial"
+                        adType = Consts.interstitialUnit
                     case 1:
-                        adType = "Rewarded"
+                        adType = Consts.rewardedUnit
                     case 2:
-                        adType = "Banner"
-                    case 4:
-                        adType = "Test Suite"
+                        adType = Consts.bannerUnit
                     default:
                         adType = ""
                 }
@@ -99,24 +95,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Ad Cell")! as! HeadlineTableViewCell
         let text = unitNames[indexPath.row]
-        let image = UIImage(named: unitImageNames[indexPath.row])
+
+        var cell = tableView.dequeueReusableCell(withIdentifier: "Ad Cell")! as! HeadlineTableViewCell
+        var image = UIImage()
         
         cell.unitLabel?.text = text
         cell.unitLabel.sizeToFit()
-        if indexPath.row == 3 {
+        if indexPath.row == 0 {
+            image = UIImage(named: Consts.unitImageNames[Consts.interstitialUnit]!)!
+        } else if indexPath.row == 1 {
+            image = UIImage(named: Consts.unitImageNames[Consts.rewardedUnit]!)!
+        } else if indexPath.row == 2 {
+            image = UIImage(named: Consts.unitImageNames[Consts.bannerUnit]!)!
+        } else if indexPath.row == 3 {
             cell.unitLabel?.text = ""
             cell.unitImage.image = nil
             cell.accessoryType = .none
             cell.isUserInteractionEnabled = false
         } else if indexPath.row == 4 {
             cell = tableView.dequeueReusableCell(withIdentifier: "Test Suite Cell")! as! HeadlineTableViewCell
-            cell.unitImage.image = image
-        } else {
-            cell.unitImage.image = image
+            image = UIImage(named: Consts.unitImageNames[Consts.bannerUnit]!)!
         }
+        
+        cell.unitImage.image = image
         return cell
     }
 }

@@ -125,7 +125,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1Mu-yp-zfL"/>
                     <connections>
-                        <outlet property="adUnitsTable" destination="ada-5z-UU0" id="PTZ-c0-cDf"/>
+                        <outlet property="adUnitsTable" destination="ada-5z-UU0" id="GKd-RR-6mv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -255,6 +255,10 @@
                                     <constraint firstAttribute="height" constant="1" id="8jc-Jc-8Hf"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aCC-wt-tVF">
+                                <rect key="frame" x="101.5" y="202" width="20" height="20"/>
+                                <color key="color" red="0.1139688566" green="0.0080312741920000007" blue="0.2772571445" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -273,12 +277,14 @@
                             <constraint firstItem="TYj-WE-BN7" firstAttribute="width" secondItem="Ujh-ZU-dus" secondAttribute="width" id="Wxk-qI-apE"/>
                             <constraint firstItem="3Op-lO-J1X" firstAttribute="top" secondItem="NMq-rc-TEh" secondAttribute="bottom" priority="750" constant="30" id="YHu-iX-WQt"/>
                             <constraint firstItem="NMq-rc-TEh" firstAttribute="top" secondItem="Ujh-ZU-dus" secondAttribute="bottom" constant="8" id="YhA-dL-Qbo"/>
+                            <constraint firstItem="aCC-wt-tVF" firstAttribute="centerY" secondItem="Ujh-ZU-dus" secondAttribute="centerY" id="aTr-aZ-4mr"/>
                             <constraint firstItem="F36-zn-fsg" firstAttribute="top" secondItem="z2x-xy-0qc" secondAttribute="top" id="aVl-D2-b2z"/>
                             <constraint firstItem="eIE-aN-usK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QnB-Yt-QpC" secondAttribute="bottom" constant="8" id="dDu-uO-lKo"/>
                             <constraint firstItem="NMq-rc-TEh" firstAttribute="leading" secondItem="3Op-lO-J1X" secondAttribute="leading" id="dIT-6J-s0g"/>
                             <constraint firstItem="TYj-WE-BN7" firstAttribute="top" secondItem="iuy-J6-1nr" secondAttribute="top" constant="100" id="eZ6-Zf-LBD"/>
                             <constraint firstItem="eIE-aN-usK" firstAttribute="centerX" secondItem="wk0-FA-POS" secondAttribute="centerX" id="hf5-AV-UXq"/>
                             <constraint firstItem="fC5-K7-LU1" firstAttribute="bottom" secondItem="z2x-xy-0qc" secondAttribute="bottom" id="la5-Vh-xlL"/>
+                            <constraint firstItem="aCC-wt-tVF" firstAttribute="centerX" secondItem="Ujh-ZU-dus" secondAttribute="centerX" id="lwv-xP-RAi"/>
                             <constraint firstItem="iuy-J6-1nr" firstAttribute="trailing" secondItem="QnB-Yt-QpC" secondAttribute="trailing" constant="20" id="mQn-Ji-FwV"/>
                             <constraint firstItem="64M-io-4cJ" firstAttribute="leading" secondItem="iuy-J6-1nr" secondAttribute="leading" id="n9R-jE-NWm"/>
                             <constraint firstItem="QnB-Yt-QpC" firstAttribute="leading" secondItem="iuy-J6-1nr" secondAttribute="leading" constant="20" id="poW-Tr-MPH"/>
@@ -293,6 +299,7 @@
                         <viewLayoutGuide key="safeArea" id="iuy-J6-1nr"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="aCC-wt-tVF" id="atJ-QY-hgs"/>
                         <outlet property="bannerView" destination="NMq-rc-TEh" id="Amc-Cm-qGn"/>
                         <outlet property="callBacksTableView" destination="QnB-Yt-QpC" id="zqV-Q3-qea"/>
                         <outlet property="callbackLabel" destination="3Op-lO-J1X" id="sDU-JD-Xmt"/>
