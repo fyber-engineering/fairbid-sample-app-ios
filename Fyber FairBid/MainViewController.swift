@@ -115,7 +115,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.isUserInteractionEnabled = false
         } else if indexPath.row == 4 {
             cell = tableView.dequeueReusableCell(withIdentifier: "Test Suite Cell")! as! HeadlineTableViewCell
-            image = UIImage(named: Consts.unitImageNames[Consts.bannerUnit]!)!
+            image = UIImage(named: Consts.unitImageNames[Consts.testSuite]!)!
         }
         
         cell.unitImage.image = image
