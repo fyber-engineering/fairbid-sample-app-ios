@@ -16,13 +16,12 @@
 		11F8A9582247E91500A816F2 /* Fyber_FairBidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9572247E91500A816F2 /* Fyber_FairBidTests.swift */; };
 		11F8A9632247E91500A816F2 /* Fyber_FairBidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9622247E91500A816F2 /* Fyber_FairBidUITests.swift */; };
 		2A51AF33225DE72900F07231 /* FairBidSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A51AF2A225DE17000F07231 /* FairBidSDK.framework */; };
-		2A528C242255FE0100AD37E7 /* banner_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C212255FE0100AD37E7 /* banner_icon.png */; };
-		2A528C252255FE0100AD37E7 /* interstitial_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C222255FE0100AD37E7 /* interstitial_icon.png */; };
-		2A528C262255FE0100AD37E7 /* rewarded_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C232255FE0100AD37E7 /* rewarded_icon.png */; };
-		2A528C30225640EC00AD37E7 /* test_suite.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C2F225640EC00AD37E7 /* test_suite.png */; };
+		2A528C242255FE0100AD37E7 /* Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C212255FE0100AD37E7 /* Banner.png */; };
+		2A528C252255FE0100AD37E7 /* Interstitial.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C222255FE0100AD37E7 /* Interstitial.png */; };
+		2A528C262255FE0100AD37E7 /* Rewarded.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C232255FE0100AD37E7 /* Rewarded.png */; };
+		2A528C30225640EC00AD37E7 /* Test Suite.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C2F225640EC00AD37E7 /* Test Suite.png */; };
 		2A528C3C22564EE800AD37E7 /* Fyber Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A528C3B22564EE700AD37E7 /* Fyber Logo.png */; };
 		2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */; };
-		2A583C4A225F301F0022201A /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A583C49225F301F0022201A /* Consts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,13 +57,12 @@
 		11F8A9642247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A51AF2A225DE17000F07231 /* FairBidSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FairBidSDK.framework; path = Pods/FairBidSDK/FairBidSDK.framework; sourceTree = "<group>"; };
 		2A51AF34225DE77300F07231 /* FyberFairBid-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FyberFairBid-Bridging-Header.h"; sourceTree = "<group>"; };
-		2A528C212255FE0100AD37E7 /* banner_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_icon.png; sourceTree = "<group>"; };
-		2A528C222255FE0100AD37E7 /* interstitial_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interstitial_icon.png; sourceTree = "<group>"; };
-		2A528C232255FE0100AD37E7 /* rewarded_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewarded_icon.png; sourceTree = "<group>"; };
-		2A528C2F225640EC00AD37E7 /* test_suite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_suite.png; sourceTree = "<group>"; };
+		2A528C212255FE0100AD37E7 /* Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner.png; sourceTree = "<group>"; };
+		2A528C222255FE0100AD37E7 /* Interstitial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Interstitial.png; sourceTree = "<group>"; };
+		2A528C232255FE0100AD37E7 /* Rewarded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rewarded.png; sourceTree = "<group>"; };
+		2A528C2F225640EC00AD37E7 /* Test Suite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Test Suite.png"; sourceTree = "<group>"; };
 		2A528C3B22564EE700AD37E7 /* Fyber Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fyber Logo.png"; sourceTree = "<group>"; };
 		2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewController.swift; sourceTree = "<group>"; };
-		2A583C49225F301F0022201A /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		380B58A929F8204E4CEC1219 /* Pods-Fyber FairBid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fyber FairBid.debug.xcconfig"; path = "Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid.debug.xcconfig"; sourceTree = "<group>"; };
 		41E97D5AB086873CDC0F96AF /* Pods_Fyber_FairBid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fyber_FairBid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F697F776F7D25834E2C824 /* Pods-Fyber FairBid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fyber FairBid.release.xcconfig"; path = "Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				11F8A9422247E91400A816F2 /* AppDelegate.swift */,
 				11F8A9442247E91400A816F2 /* MainViewController.swift */,
 				2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */,
-				2A583C49225F301F0022201A /* Consts.swift */,
 				11F8A9462247E91400A816F2 /* Main.storyboard */,
 				11F8A9492247E91500A816F2 /* Assets.xcassets */,
 				11F8A94B2247E91500A816F2 /* LaunchScreen.storyboard */,
@@ -157,10 +154,10 @@
 		2A528C202255FCDE00AD37E7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				2A528C212255FE0100AD37E7 /* banner_icon.png */,
-				2A528C222255FE0100AD37E7 /* interstitial_icon.png */,
-				2A528C232255FE0100AD37E7 /* rewarded_icon.png */,
-				2A528C2F225640EC00AD37E7 /* test_suite.png */,
+				2A528C212255FE0100AD37E7 /* Banner.png */,
+				2A528C222255FE0100AD37E7 /* Interstitial.png */,
+				2A528C232255FE0100AD37E7 /* Rewarded.png */,
+				2A528C2F225640EC00AD37E7 /* Test Suite.png */,
 				2A528C3B22564EE700AD37E7 /* Fyber Logo.png */,
 			);
 			path = Assets;
@@ -290,12 +287,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A528C242255FE0100AD37E7 /* banner_icon.png in Resources */,
-				2A528C30225640EC00AD37E7 /* test_suite.png in Resources */,
+				2A528C242255FE0100AD37E7 /* Banner.png in Resources */,
+				2A528C30225640EC00AD37E7 /* Test Suite.png in Resources */,
 				2A528C3C22564EE800AD37E7 /* Fyber Logo.png in Resources */,
 				11F8A94D2247E91500A816F2 /* LaunchScreen.storyboard in Resources */,
-				2A528C262255FE0100AD37E7 /* rewarded_icon.png in Resources */,
-				2A528C252255FE0100AD37E7 /* interstitial_icon.png in Resources */,
+				2A528C262255FE0100AD37E7 /* Rewarded.png in Resources */,
+				2A528C252255FE0100AD37E7 /* Interstitial.png in Resources */,
 				11F8A94A2247E91500A816F2 /* Assets.xcassets in Resources */,
 				11F8A9482247E91400A816F2 /* Main.storyboard in Resources */,
 			);
@@ -372,7 +369,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F8A9452247E91400A816F2 /* MainViewController.swift in Sources */,
-				2A583C4A225F301F0022201A /* Consts.swift in Sources */,
 				11F8A9432247E91400A816F2 /* AppDelegate.swift in Sources */,
 				2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */,
 			);

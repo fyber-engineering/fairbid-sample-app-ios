@@ -6,8 +6,15 @@
 //  Copyright © 2019 Fyber. All rights reserved.
 //
 
-
 import UIKit
+
+enum ObjectTypes: String, CaseIterable {
+    case interstitial = "Interstitial"
+    case rewarded = "Rewarded"
+    case banner = "Banner"
+    case emptyCell = ""
+    case testSuite = "Test Suite"
+}
 
 class HeadlineTableViewCell: UITableViewCell {
     @IBOutlet weak var unitImage: UIImageView!
@@ -18,8 +25,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var adUnitsTable: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
-    
-    private let unitNames: [String] = ["Interstitial", "Rewarded", "Banner", "", "Test Suite"]
     
     // MARK: - View lifecycle
 
@@ -62,22 +67,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "select ad") {
             let adVC = segue.destination as! AdsScreenViewController
-            var adType = String()
 
             if let indexPath = adUnitsTable.indexPathForSelectedRow {
-                
-                switch indexPath.row {
-                    case 0:
-                        adType = Consts.interstitialUnit
-                    case 1:
-                        adType = Consts.rewardedUnit
-                    case 2:
-                        adType = Consts.bannerUnit
-                    default:
-                        adType = ""
+                if (indexPath.row >= 0) && (indexPath.row <= 2) {
+                    adVC.adType = ObjectTypes.allCases[indexPath.row]
                 }
             }
-            adVC.adType = adType
         }
     }
     
@@ -95,7 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let text = unitNames[indexPath.row]
+        let text = ObjectTypes.allCases[indexPath.row].rawValue
 
         var cell = tableView.dequeueReusableCell(withIdentifier: "Ad Cell")! as! HeadlineTableViewCell
         var image = UIImage()
@@ -103,11 +98,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.unitLabel?.text = text
         cell.unitLabel.sizeToFit()
         if indexPath.row == 0 {
-            image = UIImage(named: Consts.unitImageNames[Consts.interstitialUnit]!)!
+            image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
         } else if indexPath.row == 1 {
-            image = UIImage(named: Consts.unitImageNames[Consts.rewardedUnit]!)!
+            image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
         } else if indexPath.row == 2 {
-            image = UIImage(named: Consts.unitImageNames[Consts.bannerUnit]!)!
+            image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
         } else if indexPath.row == 3 {
             cell.unitLabel?.text = ""
             cell.unitImage.image = nil
@@ -115,11 +110,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.isUserInteractionEnabled = false
         } else if indexPath.row == 4 {
             cell = tableView.dequeueReusableCell(withIdentifier: "Test Suite Cell")! as! HeadlineTableViewCell
-            image = UIImage(named: Consts.unitImageNames[Consts.testSuite]!)!
+            image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
         }
         
         cell.unitImage.image = image
         return cell
     }
 }
-

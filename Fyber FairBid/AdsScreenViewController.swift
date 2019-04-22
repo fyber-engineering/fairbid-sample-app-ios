@@ -10,7 +10,7 @@ import UIKit
 
 class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInterstitialDelegate, FYBRewardedDelegate, FYBBannerDelegate {
 
-    public var adType: String!
+    var adType: ObjectTypes!
 
     private let disabledColor = UIColor(red: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
     private let availableColor = UIColor(red: 29/255.0, green: 0/255.0, blue: 71/255.0, alpha: 1)
@@ -19,6 +19,8 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     private let rewardedPlacementID = "RewardedPlacementIdExample"
     private let bannerPlacementID = "BannerPlacementIdExample"
     
+    let formatter = DateFormatter()
+
     private var banner : FYBBannerView?
 
     
@@ -46,6 +48,8 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        formatter.dateFormat = "HH:mm:ss"
+
         FYBInterstitial.delegate = self
         FYBRewarded.delegate = self
         FYBBanner.delegate = self
@@ -53,26 +57,26 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         callBacksTableView.dataSource = self
         callBacksTableView.tableFooterView = (UIView(frame: CGRect.zero))
         
-        title = adType
+        title = adType.rawValue
         navigationController?.navigationBar.topItem?.title = ""
 
         showButton.backgroundColor = disabledColor
         showButton.isEnabled = false
         
         var image = UIImage()
-        if adType == Consts.interstitialUnit {
+        if adType == ObjectTypes.interstitial {
             bannerView.removeFromSuperview()
             placmentIdLabel.text = interstitialPlacementID
-            image = UIImage(named: Consts.unitImageNames[Consts.interstitialUnit]!)!
+            image = UIImage(named: ObjectTypes.interstitial.rawValue)!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
             if (FYBInterstitial.isAvailable(interstitialPlacementID)) {
                 adIsAvailable()
             }
-        } else if adType == Consts.rewardedUnit {
+        } else if adType == ObjectTypes.rewarded {
             bannerView.removeFromSuperview()
             placmentIdLabel.text = rewardedPlacementID
-            image = UIImage(named: Consts.unitImageNames[Consts.rewardedUnit]!)!
+            image = UIImage(named: ObjectTypes.rewarded.rawValue)!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
             if (FYBRewarded.isAvailable(rewardedPlacementID)) {
@@ -80,7 +84,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
             }
         } else {
             placmentIdLabel.text = bannerPlacementID
-            image = UIImage(named: Consts.unitImageNames[Consts.bannerUnit]!)!
+            image = UIImage(named: ObjectTypes.banner.rawValue)!
             requestButton.setTitle("Show", for: .normal)
             showButton.setTitle("Destroy", for: .normal)
         }
@@ -105,9 +109,9 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     // MARK: - Service
 
     @IBAction func requestAdClicked(_ sender: Any) {
-        if adType == Consts.interstitialUnit {
+        if adType == ObjectTypes.interstitial {
             FYBInterstitial.request(interstitialPlacementID)
-        } else if adType == Consts.rewardedUnit {
+        } else if adType == ObjectTypes.rewarded {
             FYBRewarded.request(rewardedPlacementID)
         } else {
             let bannerOptions = FYBBannerOptions()
@@ -118,9 +122,9 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         fetchingInProgress()
     }
     @IBAction func showOrDestroyAdClicked(_ sender: Any) {
-        if adType == Consts.interstitialUnit {
+        if adType == ObjectTypes.interstitial {
             FYBInterstitial.show(interstitialPlacementID)
-        } else if adType == Consts.rewardedUnit {
+        } else if adType == ObjectTypes.interstitial {
             FYBRewarded.show(rewardedPlacementID)
         } else {
             banner?.removeFromSuperview()
@@ -164,7 +168,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     }
     
     func addEventToCallbacksList(_ callback: String) {
-        if callback.contains(adType.lowercased()) {
+        if callback.contains(adType.rawValue.lowercased()) {
             callbackStrings.append(stringFromDate(Date()) + " " + callback)
             callBacksTableView.reloadData()
             scrollToBottom()
@@ -176,8 +180,6 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     }
     
     func stringFromDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
         return formatter.string(from: date)
     }
 
@@ -186,59 +188,59 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         self.callBacksTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
-    func currentAdEquals(_ adType: String) -> Bool {
+    func currentAdEquals(_ adType: ObjectTypes) -> Bool {
         return self.adType == adType
     }
 
     // MARK: - FYBInterstitialDelegate
 
     func interstitialIsAvailable(_ placementName: String) {
-        if currentAdEquals(Consts.interstitialUnit) {
+        if currentAdEquals(ObjectTypes.interstitial) {
             addEventToCallbacksList(#function)
             adIsAvailable()
         }
     }
     
     func interstitialIsUnavailable(_ placementName: String) {
-        if currentAdEquals(Consts.interstitialUnit) {
+        if currentAdEquals(ObjectTypes.interstitial) {
             adDismissed()
             addEventToCallbacksList(#function)
         }
     }
     
     func interstitialDidShow(_ placementName: String) {
-        if currentAdEquals(Consts.interstitialUnit) {
+        if currentAdEquals(ObjectTypes.interstitial) {
             addEventToCallbacksList(#function)
         }
     }
     
     func interstitialDidFail(toShow placementName: String, withError error: Error) {
-        if currentAdEquals(Consts.interstitialUnit) {
+        if currentAdEquals(ObjectTypes.interstitial) {
             addEventToCallbacksList(#function)
         }
     }
     
     func interstitialDidClick(_ placementName: String) {
-        if currentAdEquals(Consts.interstitialUnit) {
+        if currentAdEquals(ObjectTypes.interstitial) {
             addEventToCallbacksList(#function)
         }
     }
     
     func interstitialDidDismiss(_ placementName: String) {
-        if currentAdEquals(Consts.interstitialUnit) {
+        if currentAdEquals(ObjectTypes.interstitial) {
             adDismissed()
             addEventToCallbacksList(#function)
         }
     }
     
     func interstitialWillStartAudio() {
-        if currentAdEquals(Consts.interstitialUnit) {
+        if currentAdEquals(ObjectTypes.interstitial) {
             addEventToCallbacksList(#function)
         }
     }
     
     func interstitialDidFinishAudio() {
-        if currentAdEquals(Consts.interstitialUnit) {
+        if currentAdEquals(ObjectTypes.interstitial) {
             addEventToCallbacksList(#function)
         }
     }
@@ -246,58 +248,58 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     // MARK: - FYBRewardedDelegate
     
     func rewardedIsAvailable(_ placementName: String) {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             adIsAvailable()
             addEventToCallbacksList(#function)
         }
     }
     
     func rewardedIsUnavailable(_ placementName: String) {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             adDismissed()
             addEventToCallbacksList(#function)
         }
     }
     
     func rewardedDidShow(_ placementName: String) {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             addEventToCallbacksList(#function)
         }
     }
     
     func rewardedDidFail(toShow placementName: String, withError error: Error) {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             addEventToCallbacksList(#function)
         }
     }
     
     func rewardedDidClick(_ placementName: String) {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             addEventToCallbacksList(#function)
         }
     }
     
     func rewardedDidComplete(_ placementName: String, userRewarded: Bool) {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             addEventToCallbacksList(#function)
         }
     }
     
     func rewardedDidDismiss(_ placementName: String) {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             adDismissed()
             addEventToCallbacksList(#function)
         }
     }
     
     func rewardedWillStartAudio() {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             addEventToCallbacksList(#function)
         }
     }
     
     func rewardedDidFinishAudio() {
-        if currentAdEquals(Consts.rewardedUnit) {
+        if currentAdEquals(ObjectTypes.rewarded) {
             addEventToCallbacksList(#function)
         }
     }
@@ -305,7 +307,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     // MARK: - FYBBannerDelegate
     
     func bannerDidLoad(_ banner: FYBBannerView) {
-        if currentAdEquals(Consts.bannerUnit) {
+        if currentAdEquals(ObjectTypes.banner) {
             self.banner = banner
             bannerHeight.constant = banner.bounds.height + 20
             adIsAvailable()
@@ -314,43 +316,43 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     }
     
     func bannerDidFail(toLoad placementName: String, withError error: Error) {
-        if currentAdEquals(Consts.bannerUnit) {
+        if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
     func bannerDidShow(_ banner: FYBBannerView) {
-        if currentAdEquals(Consts.bannerUnit) {
+        if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
     func bannerDidClick(_ banner: FYBBannerView) {
-        if currentAdEquals(Consts.bannerUnit) {
+        if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
     func bannerWillPresentModalView(_ banner: FYBBannerView) {
-        if currentAdEquals(Consts.bannerUnit) {
+        if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
     func bannerDidDismissModalView(_ banner: FYBBannerView) {
-        if currentAdEquals(Consts.bannerUnit) {
+        if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
     func bannerWillLeaveApplication(_ banner: FYBBannerView) {
-        if currentAdEquals(Consts.bannerUnit) {
+        if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
     func banner(_ banner: FYBBannerView, didResizeToFrame frame: CGRect) {
-        if currentAdEquals(Consts.bannerUnit) {
+        if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
