@@ -21,7 +21,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     
     let formatter = DateFormatter()
 
-    private var banner : FYBBannerView?
+    private var banner : FYBBannerAdView?
 
     
     @IBOutlet weak var callBacksTableView: UITableView!
@@ -306,7 +306,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     
     // MARK: - FYBBannerDelegate
     
-    func bannerDidLoad(_ banner: FYBBannerView) {
+    func bannerDidLoad(_ banner: FYBBannerAdView) {
         if currentAdEquals(ObjectTypes.banner) {
             self.banner = banner
             bannerHeight.constant = banner.bounds.height + 20
@@ -321,37 +321,37 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         }
     }
     
-    func bannerDidShow(_ banner: FYBBannerView) {
+    func bannerDidShow(_ banner: FYBBannerAdView) {
         if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
-    func bannerDidClick(_ banner: FYBBannerView) {
+    func bannerDidClick(_ banner: FYBBannerAdView) {
         if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
-    func bannerWillPresentModalView(_ banner: FYBBannerView) {
+    func bannerWillPresentModalView(_ banner: FYBBannerAdView) {
         if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
-    func bannerDidDismissModalView(_ banner: FYBBannerView) {
+    func bannerDidDismissModalView(_ banner: FYBBannerAdView) {
         if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
-    func bannerWillLeaveApplication(_ banner: FYBBannerView) {
+    func bannerWillLeaveApplication(_ banner: FYBBannerAdView) {
         if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
     }
     
-    func banner(_ banner: FYBBannerView, didResizeToFrame frame: CGRect) {
+    func banner(_ banner: FYBBannerAdView, didResizeToFrame frame: CGRect) {
         if currentAdEquals(ObjectTypes.banner) {
             addEventToCallbacksList(#function)
         }
