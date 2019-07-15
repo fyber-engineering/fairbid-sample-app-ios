@@ -117,14 +117,14 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
             let bannerOptions = FYBBannerOptions()
 
             bannerOptions.placementName = bannerPlacementID
-            FYBBanner.place(in: bannerView, position: .top, options: bannerOptions)
+            FYBBanner.show(in: bannerView, position: .top, options: bannerOptions)
         }
         fetchingInProgress()
     }
     @IBAction func showOrDestroyAdClicked(_ sender: Any) {
         if adType == ObjectTypes.interstitial {
             FYBInterstitial.show(interstitialPlacementID)
-        } else if adType == ObjectTypes.interstitial {
+        } else if adType == ObjectTypes.rewarded {
             FYBRewarded.show(rewardedPlacementID)
         } else {
             banner?.removeFromSuperview()
