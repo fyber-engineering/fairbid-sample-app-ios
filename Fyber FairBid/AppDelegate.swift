@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let options = FYBStartOptions()
         
         options.autoRequestingEnabled = false
+        options.logLevel = FYBLoggingLevel.verbose
+        
         FairBid.start(withAppId: "109613",options: options)
         return true
     }

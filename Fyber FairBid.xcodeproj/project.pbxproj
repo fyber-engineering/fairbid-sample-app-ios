@@ -321,18 +321,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-resources.sh",
-				"${PODS_ROOT}/FairBidSDK/FairBidSDKResources.bundle",
-				"${PODS_ROOT}/FairBidSDK/IASDKResources.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FairBidSDKResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IASDKResources.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

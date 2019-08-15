@@ -15,9 +15,9 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     private let disabledColor = UIColor(red: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
     private let availableColor = UIColor(red: 29/255.0, green: 0/255.0, blue: 71/255.0, alpha: 1)
     
-    private let interstitialPlacementID = "InterstitialPlacementIdExample"
-    private let rewardedPlacementID = "RewardedPlacementIdExample"
-    private let bannerPlacementID = "BannerPlacementIdExample"
+    private let interstitialPlacementID = "197405"
+    private let rewardedPlacementID = "197406"
+    private let bannerPlacementID = "197407"
     
     let formatter = DateFormatter()
 
@@ -29,7 +29,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     @IBOutlet weak var unitImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    @IBOutlet weak var placmentIdLabel: UILabel!
+    @IBOutlet weak var placementIdLabel: UILabel!
     @IBOutlet weak var callbackLabel: UILabel!
 
     @IBOutlet weak var requestButton: UIButton!
@@ -66,7 +66,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         var image = UIImage()
         if adType == ObjectTypes.interstitial {
             bannerView.removeFromSuperview()
-            placmentIdLabel.text = interstitialPlacementID
+            placementIdLabel.text = interstitialPlacementID
             image = UIImage(named: ObjectTypes.interstitial.rawValue)!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
@@ -75,7 +75,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
             }
         } else if adType == ObjectTypes.rewarded {
             bannerView.removeFromSuperview()
-            placmentIdLabel.text = rewardedPlacementID
+            placementIdLabel.text = rewardedPlacementID
             image = UIImage(named: ObjectTypes.rewarded.rawValue)!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
@@ -83,7 +83,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
                 adIsAvailable()
             }
         } else {
-            placmentIdLabel.text = bannerPlacementID
+            placementIdLabel.text = bannerPlacementID
             image = UIImage(named: ObjectTypes.banner.rawValue)!
             requestButton.setTitle("Show", for: .normal)
             showButton.setTitle("Destroy", for: .normal)
@@ -116,7 +116,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         } else {
             let bannerOptions = FYBBannerOptions()
 
-            bannerOptions.placementName = bannerPlacementID
+            bannerOptions.placementId = bannerPlacementID as NSString
             FYBBanner.show(in: bannerView, position: .top, options: bannerOptions)
         }
         fetchingInProgress()
