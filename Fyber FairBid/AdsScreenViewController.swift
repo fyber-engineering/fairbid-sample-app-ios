@@ -116,7 +116,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         } else {
             let bannerOptions = FYBBannerOptions()
 
-            bannerOptions.placementId = bannerPlacementID as NSString
+            bannerOptions.placementId = bannerPlacementID
             FYBBanner.show(in: bannerView, position: .top, options: bannerOptions)
         }
         fetchingInProgress()
