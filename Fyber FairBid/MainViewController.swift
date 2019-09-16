@@ -36,6 +36,10 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+
+        if let indexPath = adUnitsTable.indexPathForSelectedRow {
+            adUnitsTable.deselectRow(at: indexPath, animated: true)
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
