@@ -65,11 +65,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "select ad") {
+        if segue.identifier == "select ad" {
             let adVC = segue.destination as! AdsScreenViewController
 
             if let indexPath = adUnitsTable.indexPathForSelectedRow {
-                if (indexPath.row >= 0) && (indexPath.row <= 2) {
+                if indexPath.row >= 0 && indexPath.row <= 2 {
                     adVC.adType = ObjectTypes.allCases[indexPath.row]
                 }
             }
@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 4) {
+        if indexPath.row == 4 {
             FairBid.presentTestSuite()
         }
     }

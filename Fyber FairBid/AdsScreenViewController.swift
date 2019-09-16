@@ -70,7 +70,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
             image = UIImage(named: ObjectTypes.interstitial.rawValue)!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
-            if (FYBInterstitial.isAvailable(interstitialPlacementID)) {
+            if FYBInterstitial.isAvailable(interstitialPlacementID) {
                 adIsAvailable()
             }
         } else if adType == ObjectTypes.rewarded {
@@ -79,7 +79,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
             image = UIImage(named: ObjectTypes.rewarded.rawValue)!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
-            if (FYBRewarded.isAvailable(rewardedPlacementID)) {
+            if FYBRewarded.isAvailable(rewardedPlacementID) {
                 adIsAvailable()
             }
         } else {
@@ -100,7 +100,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Callback cell")!
-        if (callbackStrings.count > indexPath.row) {
+        if callbackStrings.count > indexPath.row {
             cell.textLabel?.text = callbackStrings[indexPath.row]
         }
         return cell
