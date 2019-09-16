@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         options.autoRequestingEnabled = false
         options.logLevel = .verbose
 
-        FairBid.start(withAppId: "109613",options: options)
+        FairBid.start(withAppId: "109613", options: options)
 
         return true
     }

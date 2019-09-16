@@ -65,8 +65,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "select ad" {
-            let adVC = segue.destination as! AdsScreenViewController
+        if segue.identifier == "select ad", let adVC = segue.destination as? AdsScreenViewController {
 
             if let indexPath = adUnitsTable.indexPathForSelectedRow {
                 if indexPath.row >= 0 && indexPath.row <= 2 {

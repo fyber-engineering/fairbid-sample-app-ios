@@ -21,8 +21,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
 
     let formatter = DateFormatter()
 
-    private var banner : FYBBannerAdView?
-
+    private var banner: FYBBannerAdView?
 
     @IBOutlet weak var callBacksTableView: UITableView!
 
@@ -183,7 +182,7 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         return formatter.string(from: date)
     }
 
-    func scrollToBottom(){
+    func scrollToBottom() {
         let indexPath = IndexPath(row: callbackStrings.count - 1, section: 0)
         self.callBacksTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
