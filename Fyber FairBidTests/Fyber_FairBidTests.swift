@@ -5,6 +5,7 @@
 //  Created by Nikita on 24/03/2019.
 //  Copyright © 2019 Fyber. All rights reserved.
 //
+// swiftlint:disable type_name
 
 import XCTest
 @testable import Fyber_FairBid
