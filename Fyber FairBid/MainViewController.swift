@@ -45,37 +45,6 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 40
-        } else {
-            return 0
-        }
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "select ad", let adVC = segue.destination as? AdsScreenViewController {
-
-            if let indexPath = adUnitsTable.indexPathForSelectedRow {
-                if indexPath.row >= 0 && indexPath.row <= 2 {
-                    adVC.adType = ObjectTypes.allCases[indexPath.row]
-                }
-            }
-        }
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            performSegue(withIdentifier: "select ad", sender: nil)
-        } else {
-            FairBid.presentTestSuite()
-        }
-    }
-
-}
-
 extension ViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -110,6 +79,37 @@ extension ViewController: UITableViewDataSource {
             return ObjectTypes.allCases[indexPath.row]
         } else {
             return .testSuite
+        }
+    }
+
+}
+
+extension ViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 40
+        } else {
+            return 0
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "select ad", let adVC = segue.destination as? AdsScreenViewController {
+
+            if let indexPath = adUnitsTable.indexPathForSelectedRow {
+                if indexPath.row >= 0 && indexPath.row <= 2 {
+                    adVC.adType = ObjectTypes.allCases[indexPath.row]
+                }
+            }
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            performSegue(withIdentifier: "select ad", sender: nil)
+        } else {
+            FairBid.presentTestSuite()
         }
     }
 
