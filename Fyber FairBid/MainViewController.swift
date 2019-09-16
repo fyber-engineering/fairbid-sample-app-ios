@@ -21,7 +21,7 @@ class HeadlineTableViewCell: UITableViewCell {
     @IBOutlet weak var unitLabel: UILabel!
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var adUnitsTable: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
@@ -46,7 +46,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
-    // MARK: - UITableViewDelegate
+}
+
+extension ViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == 3 {
@@ -81,7 +83,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    // MARK: - UITableViewDataSource
+}
+
+extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5

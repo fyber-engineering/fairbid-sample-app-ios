@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInterstitialDelegate, FYBRewardedDelegate, FYBBannerDelegate {
+class AdsScreenViewController: UIViewController {
 
     var adType: ObjectTypes!
 
@@ -88,20 +88,6 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         }
 
         unitImage.image = image
-    }
-
-    // MARK: - UITableViewDataSource
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return callbackStrings.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Callback cell")!
-        if callbackStrings.count > indexPath.row {
-            cell.textLabel?.text = callbackStrings[indexPath.row]
-        }
-        return cell
     }
 
     // MARK: - Service
@@ -191,7 +177,25 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         return self.adType == adType
     }
 
-    // MARK: - FYBInterstitialDelegate
+}
+
+extension AdsScreenViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return callbackStrings.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Callback cell", for: indexPath)
+        if indexPath.row < callbackStrings.count {
+            cell.textLabel?.text = callbackStrings[indexPath.row]
+        }
+        return cell
+    }
+
+}
+
+extension AdsScreenViewController: FYBInterstitialDelegate {
 
     func interstitialIsAvailable(_ placementName: String) {
         if currentAdEquals(ObjectTypes.interstitial) {
@@ -244,7 +248,9 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         }
     }
 
-    // MARK: - FYBRewardedDelegate
+}
+
+extension AdsScreenViewController: FYBRewardedDelegate {
 
     func rewardedIsAvailable(_ placementName: String) {
         if currentAdEquals(ObjectTypes.rewarded) {
@@ -303,7 +309,9 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         }
     }
 
-    // MARK: - FYBBannerDelegate
+}
+
+extension AdsScreenViewController: FYBBannerDelegate {
 
     func bannerDidLoad(_ banner: FYBBannerAdView) {
         if currentAdEquals(ObjectTypes.banner) {
@@ -356,9 +364,4 @@ class AdsScreenViewController: UIViewController, UITableViewDataSource, FYBInter
         }
     }
 
-    // MARK: - deinit
-
-    deinit {
-//        cleanCallbacksButton.isHidden = true
-    }
 }
