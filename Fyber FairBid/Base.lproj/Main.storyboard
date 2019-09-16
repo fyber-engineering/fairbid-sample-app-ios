@@ -36,7 +36,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-x7-3Py">
+                                                <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banner" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-x7-3Py">
                                                     <rect key="frame" x="14" y="9" width="40" height="51"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="51" id="bkW-9A-A8o"/>
@@ -129,7 +129,7 @@
                                     <action selector="requestAdClicked:" destination="wqS-W9-J4F" eventType="touchUpInside" id="Iz1-mp-hAg"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="z2x-xy-0qc">
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banner" translatesAutoresizingMaskIntoConstraints="NO" id="z2x-xy-0qc">
                                 <rect key="frame" x="20" y="114" width="40" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="1Jb-aQ-8jN"/>
@@ -320,6 +320,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="banner_icon.png" width="132" height="171"/>
+        <image name="Banner" width="66" height="85.5"/>
     </resources>
 </document>

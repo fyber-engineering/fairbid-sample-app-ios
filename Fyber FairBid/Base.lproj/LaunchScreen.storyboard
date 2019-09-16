@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fyber Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Od1-RV-R08">
-                                <rect key="frame" x="105.5" y="419.5" width="203" height="57"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fyber Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Od1-RV-R08">
+                                <rect key="frame" x="156.5" y="434" width="101.5" height="28.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.83921568627450982" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fyber Logo.png" width="203" height="57"/>
+        <image name="Fyber Logo" width="101.5" height="28.5"/>
     </resources>
 </document>
