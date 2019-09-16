@@ -91,7 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let text = ObjectTypes.allCases[indexPath.row].rawValue
 
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Ad Cell")! as! HeadlineTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(at: indexPath), for: indexPath) as! HeadlineTableViewCell
         var image = UIImage()
 
         cell.unitLabel?.text = text
@@ -108,11 +108,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.accessoryType = .none
             cell.isUserInteractionEnabled = false
         } else if indexPath.row == 4 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "Test Suite Cell")! as! HeadlineTableViewCell
             image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
         }
 
         cell.unitImage.image = image
         return cell
     }
+
+    private func identifier(at indexPath: IndexPath) -> String {
+        if indexPath.row == 4 {
+            return "Test Suite Cell"
+        } else {
+            return "Ad Cell"
+        }
+    }
+
 }
