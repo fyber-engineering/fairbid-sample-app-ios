@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        adUnitsTable.tableFooterView = (UIView(frame: CGRect.zero))
+        adUnitsTable.tableFooterView = UIView(frame: .zero)
         versionLabel.text = "Fyber FairBid " + FairBid.version()
     }
 
@@ -95,19 +95,15 @@ extension ViewController: UITableViewDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "select ad", let adVC = segue.destination as? AdsScreenViewController {
-
-            if let indexPath = adUnitsTable.indexPathForSelectedRow {
-                if indexPath.row >= 0 && indexPath.row <= 2 {
-                    adVC.adType = ObjectTypes.allCases[indexPath.row]
-                }
-            }
+        if let adVC = segue.destination as? AdsScreenViewController,
+            let indexPath = adUnitsTable.indexPathForSelectedRow {
+            adVC.adType = ObjectTypes.allCases[indexPath.row]
         }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            performSegue(withIdentifier: "select ad", sender: nil)
+            performSegue(withIdentifier: "Select Ad", sender: nil)
         } else {
             FairBid.presentTestSuite()
         }

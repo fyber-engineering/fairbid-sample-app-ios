@@ -96,7 +96,7 @@
                     <connections>
                         <outlet property="adUnitsTable" destination="ada-5z-UU0" id="GKd-RR-6mv"/>
                         <outlet property="versionLabel" destination="DqM-ac-spR" id="8ju-Pe-C3w"/>
-                        <segue destination="wqS-W9-J4F" kind="show" identifier="select ad" id="hjb-pW-n40"/>
+                        <segue destination="wqS-W9-J4F" kind="show" identifier="Select Ad" id="hjb-pW-n40"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
