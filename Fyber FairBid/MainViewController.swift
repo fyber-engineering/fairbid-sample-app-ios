@@ -12,7 +12,6 @@ enum ObjectTypes: String, CaseIterable {
     case interstitial = "Interstitial"
     case rewarded = "Rewarded"
     case banner = "Banner"
-    case emptyCell = ""
     case testSuite = "Test Suite"
 }
 
@@ -48,19 +47,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 3 {
-            cell.backgroundColor = view.backgroundColor
-        } else {
-            cell.backgroundColor = .white
-        }
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 3 {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
             return 40
         } else {
-            return 80
+            return 0
         }
     }
 
@@ -76,7 +67,7 @@ extension ViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 4 {
+        if indexPath.section == 1 {
             FairBid.presentTestSuite()
         }
     }
@@ -85,42 +76,46 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if section == 0 {
+            return 3
+        } else {
+            return 1
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let text = ObjectTypes.allCases[indexPath.row].rawValue
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(at: indexPath), for: indexPath) as! HeadlineTableViewCell
-        var image = UIImage()
-
-        cell.unitLabel?.text = text
-        cell.unitLabel.sizeToFit()
-        if indexPath.row == 0 {
-            image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
-        } else if indexPath.row == 1 {
-            image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
-        } else if indexPath.row == 2 {
-            image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
-        } else if indexPath.row == 3 {
-            cell.unitLabel?.text = ""
-            cell.unitImage.image = nil
-            cell.accessoryType = .none
-            cell.isUserInteractionEnabled = false
-        } else if indexPath.row == 4 {
-            image = UIImage(named: ObjectTypes.allCases[indexPath.row].rawValue)!
-        }
-
-        cell.unitImage.image = image
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(at: indexPath), for: indexPath)
+        configure(cell: cell, at: indexPath)
         return cell
     }
 
-    private func identifier(at indexPath: IndexPath) -> String {
-        if indexPath.row == 4 {
-            return "Test Suite Cell"
+    private func configure(cell: UITableViewCell, at indexPath: IndexPath) {
+        guard let cell = cell as? HeadlineTableViewCell else { return }
+
+        let text = objectType(at: indexPath).rawValue
+
+        cell.unitLabel.text = text
+        cell.unitImage.image = UIImage(named: text)
+    }
+
+    private func objectType(at indexPath: IndexPath) -> ObjectTypes {
+        if indexPath.section == 0 {
+            return ObjectTypes.allCases[indexPath.row]
         } else {
+            return .testSuite
+        }
+    }
+
+    private func identifier(at indexPath: IndexPath) -> String {
+        if indexPath.section == 0 {
             return "Ad Cell"
+        } else {
+            return "Test Suite Cell"
         }
     }
 
