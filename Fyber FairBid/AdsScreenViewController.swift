@@ -52,7 +52,6 @@ class AdsScreenViewController: UIViewController {
         FYBRewarded.delegate = self
         FYBBanner.delegate = self
 
-        callBacksTableView.dataSource = self
         callBacksTableView.tableFooterView = (UIView(frame: CGRect.zero))
 
         title = adType.rawValue

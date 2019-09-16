@@ -30,8 +30,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        adUnitsTable.delegate = self
-        adUnitsTable.dataSource = self
         adUnitsTable.tableFooterView = (UIView(frame: CGRect.zero))
         versionLabel.text = "Fyber FairBid " + FairBid.version()
     }
