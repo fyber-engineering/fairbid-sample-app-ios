@@ -52,7 +52,7 @@ class AdsScreenViewController: UIViewController {
         FYBRewarded.delegate = self
         FYBBanner.delegate = self
 
-        callBacksTableView.tableFooterView = (UIView(frame: CGRect.zero))
+        callBacksTableView.tableFooterView = UIView(frame: .zero)
 
         title = adType.rawValue
         navigationController?.navigationBar.topItem?.title = ""
@@ -60,11 +60,9 @@ class AdsScreenViewController: UIViewController {
         showButton.backgroundColor = disabledColor
         showButton.isEnabled = false
 
-        var image = UIImage()
         if adType == ObjectTypes.interstitial {
             bannerView.removeFromSuperview()
             placementIdLabel.text = interstitialPlacementID
-            image = UIImage(named: ObjectTypes.interstitial.rawValue)!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
             if FYBInterstitial.isAvailable(interstitialPlacementID) {
@@ -73,7 +71,6 @@ class AdsScreenViewController: UIViewController {
         } else if adType == ObjectTypes.rewarded {
             bannerView.removeFromSuperview()
             placementIdLabel.text = rewardedPlacementID
-            image = UIImage(named: ObjectTypes.rewarded.rawValue)!
             requestButton.setTitle("Request", for: .normal)
             showButton.setTitle("Show", for: .normal)
             if FYBRewarded.isAvailable(rewardedPlacementID) {
@@ -81,12 +78,11 @@ class AdsScreenViewController: UIViewController {
             }
         } else {
             placementIdLabel.text = bannerPlacementID
-            image = UIImage(named: ObjectTypes.banner.rawValue)!
             requestButton.setTitle("Show", for: .normal)
             showButton.setTitle("Destroy", for: .normal)
         }
 
-        unitImage.image = image
+        unitImage.image = UIImage(named: adType.rawValue)!
     }
 
     // MARK: - Service
@@ -126,14 +122,14 @@ class AdsScreenViewController: UIViewController {
     }
 
     func fetchingInProgress() {
-        requestButton.setTitleColor(UIColor.clear, for: .normal)
+        requestButton.setTitleColor(.clear, for: .normal)
         requestButton.isEnabled = false
         requestButton.backgroundColor = disabledColor
         activityIndicator.startAnimating()
     }
 
     func adIsAvailable() {
-        requestButton.setTitleColor(UIColor.white, for: .normal)
+        requestButton.setTitleColor(.white, for: .normal)
         requestButton.isEnabled = false
         requestButton.backgroundColor = disabledColor
         showButton.isEnabled = true
@@ -143,7 +139,7 @@ class AdsScreenViewController: UIViewController {
     }
 
     func adDismissed() {
-        requestButton.setTitleColor(UIColor.white, for: .normal)
+        requestButton.setTitleColor(.white, for: .normal)
         requestButton.isEnabled = true
         requestButton.backgroundColor = availableColor
         showButton.isEnabled = false
@@ -152,15 +148,15 @@ class AdsScreenViewController: UIViewController {
     }
 
     func addEventToCallbacksList(_ callback: String) {
-        if callback.contains(adType.rawValue.lowercased()) {
-            callbackStrings.append(stringFromDate(Date()) + " " + callback)
-            callBacksTableView.reloadData()
-            scrollToBottom()
-            callBacksTableView.isHidden = false
-            cleanCallbacksButton.isHidden = false
-            callbackLabel.isHidden = false
-            seperator.isHidden = false
-        }
+        guard callback.contains(adType.rawValue.lowercased()) else { return }
+
+        callbackStrings.append(stringFromDate(Date()) + " " + callback)
+        callBacksTableView.reloadData()
+        scrollToBottom()
+        callBacksTableView.isHidden = false
+        cleanCallbacksButton.isHidden = false
+        callbackLabel.isHidden = false
+        seperator.isHidden = false
     }
 
     func stringFromDate(_ date: Date) -> String {
