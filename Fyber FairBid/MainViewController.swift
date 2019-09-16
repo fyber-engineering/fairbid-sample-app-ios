@@ -67,7 +67,9 @@ extension ViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        if indexPath.section == 0 {
+            performSegue(withIdentifier: "select ad", sender: nil)
+        } else {
             FairBid.presentTestSuite()
         }
     }
@@ -89,7 +91,7 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(at: indexPath), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         configure(cell: cell, at: indexPath)
         return cell
     }
@@ -108,14 +110,6 @@ extension ViewController: UITableViewDataSource {
             return ObjectTypes.allCases[indexPath.row]
         } else {
             return .testSuite
-        }
-    }
-
-    private func identifier(at indexPath: IndexPath) -> String {
-        if indexPath.section == 0 {
-            return "Ad Cell"
-        } else {
-            return "Test Suite Cell"
         }
     }
 
