@@ -115,9 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				2A51AF34225DE77300F07231 /* FyberFairBid-Bridging-Header.h */,
+				2D0CD72E23312C1900D6168A /* AdType.swift */,
 				11F8A9422247E91400A816F2 /* AppDelegate.swift */,
 				11F8A9442247E91400A816F2 /* ViewController.swift */,
-				2D0CD72E23312C1900D6168A /* AdType.swift */,
 				2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */,
 				2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */,
 				11F8A9462247E91400A816F2 /* Main.storyboard */,

@@ -59,8 +59,7 @@ class AdsScreenViewController: UIViewController {
         title = adType.rawValue
         navigationController?.navigationBar.topItem?.title = ""
 
-        showButton.backgroundColor = .disabled
-        showButton.isEnabled = false
+        showButton.disable()
 
         if adType == AdType.interstitial {
             bannerView.removeFromSuperview()
@@ -128,27 +127,22 @@ class AdsScreenViewController: UIViewController {
 
     func fetchingInProgress() {
         requestButton.setTitleColor(.clear, for: .normal)
-        requestButton.isEnabled = false
-        requestButton.backgroundColor = .disabled
+        requestButton.disable()
         activityIndicator.startAnimating()
     }
 
     func adIsAvailable() {
         requestButton.setTitleColor(.white, for: .normal)
-        requestButton.isEnabled = false
-        requestButton.backgroundColor = .disabled
-        showButton.isEnabled = true
-        showButton.backgroundColor = .available
+        requestButton.disable()
+        showButton.enable()
         activityIndicator.stopAnimating()
 
     }
 
     func adDismissed() {
         requestButton.setTitleColor(.white, for: .normal)
-        requestButton.isEnabled = true
-        requestButton.backgroundColor = .available
-        showButton.isEnabled = false
-        showButton.backgroundColor = .disabled
+        requestButton.enable()
+        showButton.disable()
         activityIndicator.stopAnimating()
     }
 
@@ -312,15 +306,15 @@ extension AdsScreenViewController: FYBBannerDelegate {
 
 }
 
+private extension UIButton {
 
-private extension UIColor {
-
-    static var available: UIColor {
-        return UIColor(red: 29/255.0, green: 0/255.0, blue: 71/255.0, alpha: 1)
+    func enable() {
+        isEnabled = true
+        backgroundColor = UIColor(red: 29/255.0, green: 0/255.0, blue: 71/255.0, alpha: 1)
     }
 
-    static var disabled: UIColor {
-        return UIColor(red: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
+    func disable() {
+        isEnabled = false
+        backgroundColor = UIColor(red: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
     }
-
 }
