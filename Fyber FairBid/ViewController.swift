@@ -66,9 +66,9 @@ extension ViewController: UITableViewDataSource {
         cell.unitImage.image = UIImage(named: text)
     }
 
-    private func objectType(at indexPath: IndexPath) -> ObjectTypes? {
+    private func objectType(at indexPath: IndexPath) -> AdType? {
         guard indexPath.section == 0 else { return nil }
-        return ObjectTypes.allCases[indexPath.row]
+        return AdType.allCases[indexPath.row]
     }
 
 }
@@ -86,7 +86,7 @@ extension ViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let adVC = segue.destination as? AdsScreenViewController,
             let indexPath = adUnitsTable.indexPathForSelectedRow {
-            adVC.adType = ObjectTypes.allCases[indexPath.row]
+            adVC.adType = AdType.allCases[indexPath.row]
         }
     }
 

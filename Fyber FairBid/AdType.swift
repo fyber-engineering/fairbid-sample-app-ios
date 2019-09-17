@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ObjectTypes: String, CaseIterable {
+enum AdType: String, CaseIterable {
     case interstitial = "Interstitial"
     case rewarded = "Rewarded"
     case banner = "Banner"

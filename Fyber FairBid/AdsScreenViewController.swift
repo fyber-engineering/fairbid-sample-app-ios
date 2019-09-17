@@ -10,7 +10,7 @@ import UIKit
 
 class AdsScreenViewController: UIViewController {
 
-    var adType: ObjectTypes!
+    var adType: AdType!
 
     private let disabledColor = UIColor(red: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
     private let availableColor = UIColor(red: 29/255.0, green: 0/255.0, blue: 71/255.0, alpha: 1)
@@ -65,7 +65,7 @@ class AdsScreenViewController: UIViewController {
         showButton.backgroundColor = disabledColor
         showButton.isEnabled = false
 
-        if adType == ObjectTypes.interstitial {
+        if adType == AdType.interstitial {
             bannerView.removeFromSuperview()
             placementIdLabel.text = interstitialPlacementID
             requestButton.setTitle("Request", for: .normal)
@@ -73,7 +73,7 @@ class AdsScreenViewController: UIViewController {
             if FYBInterstitial.isAvailable(interstitialPlacementID) {
                 adIsAvailable()
             }
-        } else if adType == ObjectTypes.rewarded {
+        } else if adType == AdType.rewarded {
             bannerView.removeFromSuperview()
             placementIdLabel.text = rewardedPlacementID
             requestButton.setTitle("Request", for: .normal)
@@ -93,9 +93,9 @@ class AdsScreenViewController: UIViewController {
     // MARK: - Service
 
     @IBAction func requestAdClicked(_ sender: Any) {
-        if adType == ObjectTypes.interstitial {
+        if adType == AdType.interstitial {
             FYBInterstitial.request(interstitialPlacementID)
-        } else if adType == ObjectTypes.rewarded {
+        } else if adType == AdType.rewarded {
             FYBRewarded.request(rewardedPlacementID)
         } else {
             let bannerOptions = FYBBannerOptions()
@@ -107,9 +107,9 @@ class AdsScreenViewController: UIViewController {
     }
 
     @IBAction func showOrDestroyAdClicked(_ sender: Any) {
-        if adType == ObjectTypes.interstitial {
+        if adType == AdType.interstitial {
             FYBInterstitial.show(interstitialPlacementID)
-        } else if adType == ObjectTypes.rewarded {
+        } else if adType == AdType.rewarded {
             FYBRewarded.show(rewardedPlacementID)
         } else {
             banner?.removeFromSuperview()
