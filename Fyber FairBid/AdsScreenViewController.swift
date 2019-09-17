@@ -118,11 +118,7 @@ class AdsScreenViewController: UIViewController {
 
     @IBAction func cleanAndHideCallbackList(_ sender: Any) {
         callbackStrings = []
-        callBacksTableView.reloadData()
-        callBacksTableView.isHidden = true
-        cleanCallbacksButton.isHidden = true
-        callbackLabel.isHidden = true
-        seperator.isHidden = true
+        reloadTableView()
     }
 
     func fetchingInProgress() {
@@ -136,7 +132,6 @@ class AdsScreenViewController: UIViewController {
         requestButton.disable()
         showButton.enable()
         activityIndicator.stopAnimating()
-
     }
 
     func adDismissed() {
@@ -147,24 +142,30 @@ class AdsScreenViewController: UIViewController {
     }
 
     func addEventToCallbacksList(_ callback: String) {
-        guard callback.contains(adType.rawValue.lowercased()) else { return }
-
         callbackStrings.append(stringFromDate(Date()) + " " + callback)
-        callBacksTableView.reloadData()
+        reloadTableView()
         scrollToBottom()
-        callBacksTableView.isHidden = false
-        cleanCallbacksButton.isHidden = false
-        callbackLabel.isHidden = false
-        seperator.isHidden = false
     }
 
     func stringFromDate(_ date: Date) -> String {
         return formatter.string(from: date)
     }
 
+    func reloadTableView() {
+        setCallbacksTable(hidden: callbackStrings.isEmpty)
+        callBacksTableView.reloadData()
+    }
+
     func scrollToBottom() {
         let indexPath = IndexPath(row: callbackStrings.count - 1, section: 0)
         self.callBacksTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+
+    func setCallbacksTable(hidden: Bool) {
+        callBacksTableView.isHidden = hidden
+        cleanCallbacksButton.isHidden = hidden
+        callbackLabel.isHidden = hidden
+        seperator.isHidden = hidden
     }
 
 }
@@ -177,9 +178,7 @@ extension AdsScreenViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Callback cell", for: indexPath)
-        if indexPath.row < callbackStrings.count {
-            cell.textLabel?.text = callbackStrings[indexPath.row]
-        }
+        cell.textLabel?.text = callbackStrings[indexPath.row]
         return cell
     }
 
