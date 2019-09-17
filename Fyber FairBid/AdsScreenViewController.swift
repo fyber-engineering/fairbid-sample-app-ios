@@ -20,24 +20,26 @@ class AdsScreenViewController: UIViewController {
     let formatter = DateFormatter()
 
     private var banner: FYBBannerAdView?
-
-    @IBOutlet weak var callBacksTableView: UITableView!
-
-    @IBOutlet weak var unitImage: UIImageView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
-    @IBOutlet weak var placementIdLabel: UILabel!
-    @IBOutlet weak var callbackLabel: UILabel!
-
-    @IBOutlet weak var requestButton: UIButton!
-    @IBOutlet weak var showButton: UIButton!
-    @IBOutlet weak var cleanCallbacksButton: UIButton!
-
-    @IBOutlet weak var bannerView: UIView!
-    @IBOutlet weak var seperator: UIView!
-
-    @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     private var callbackStrings: [String] = []
+
+    // MARK: - Outlets
+
+    @IBOutlet var callBacksTableView: UITableView!
+
+    @IBOutlet var unitImage: UIImageView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+
+    @IBOutlet var placementIdLabel: UILabel!
+    @IBOutlet var callbackLabel: UILabel!
+
+    @IBOutlet var requestButton: UIButton!
+    @IBOutlet var showButton: UIButton!
+    @IBOutlet var cleanCallbacksButton: UIButton!
+
+    @IBOutlet var bannerView: UIView!
+    @IBOutlet var seperator: UIView!
+
+    @IBOutlet var bannerHeight: NSLayoutConstraint!
 
     // MARK: - View lifecycle
 
