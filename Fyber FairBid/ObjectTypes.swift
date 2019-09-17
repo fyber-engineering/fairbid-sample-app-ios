@@ -12,5 +12,4 @@ enum ObjectTypes: String, CaseIterable {
     case interstitial = "Interstitial"
     case rewarded = "Rewarded"
     case banner = "Banner"
-    case testSuite = "Test Suite"
 }

@@ -60,18 +60,15 @@ extension ViewController: UITableViewDataSource {
     private func configure(cell: UITableViewCell, at indexPath: IndexPath) {
         guard let cell = cell as? HeadlineTableViewCell else { return }
 
-        let text = objectType(at: indexPath).rawValue
+        let text = objectType(at: indexPath)?.rawValue ?? "Test Suite"
 
         cell.unitLabel.text = text
         cell.unitImage.image = UIImage(named: text)
     }
 
-    private func objectType(at indexPath: IndexPath) -> ObjectTypes {
-        if indexPath.section == 0 {
-            return ObjectTypes.allCases[indexPath.row]
-        } else {
-            return .testSuite
-        }
+    private func objectType(at indexPath: IndexPath) -> ObjectTypes? {
+        guard indexPath.section == 0 else { return nil }
+        return ObjectTypes.allCases[indexPath.row]
     }
 
 }

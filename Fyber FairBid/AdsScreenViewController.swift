@@ -55,8 +55,6 @@ class AdsScreenViewController: UIViewController {
             FYBRewarded.delegate = self
         case .banner:
             FYBBanner.delegate = self
-        default:
-            break
         }
 
         callBacksTableView.tableFooterView = UIView(frame: .zero)
