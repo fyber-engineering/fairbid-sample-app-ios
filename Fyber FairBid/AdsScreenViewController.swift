@@ -48,10 +48,29 @@ class AdsScreenViewController: UIViewController {
         switch adType! {
         case .interstitial:
             FYBInterstitial.delegate = self
+            placementIdLabel.text = interstitialPlacementID
+            if FYBInterstitial.isAvailable(interstitialPlacementID) {
+                adIsAvailable()
+            }
         case .rewarded:
             FYBRewarded.delegate = self
+            placementIdLabel.text = rewardedPlacementID
+            if FYBRewarded.isAvailable(rewardedPlacementID) {
+                adIsAvailable()
+            }
         case .banner:
             FYBBanner.delegate = self
+            placementIdLabel.text = bannerPlacementID
+        }
+
+        if adType! == .banner {
+            requestButton.setTitle("Show", for: .normal)
+            showButton.setTitle("Destroy", for: .normal)
+        } else {
+            requestButton.setTitle("Request", for: .normal)
+            showButton.setTitle("Show", for: .normal)
+
+            bannerView.removeFromSuperview()
         }
 
         callBacksTableView.tableFooterView = UIView(frame: .zero)
@@ -60,29 +79,6 @@ class AdsScreenViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = ""
 
         showButton.disable()
-
-        if adType == AdType.interstitial {
-            bannerView.removeFromSuperview()
-            placementIdLabel.text = interstitialPlacementID
-            requestButton.setTitle("Request", for: .normal)
-            showButton.setTitle("Show", for: .normal)
-            if FYBInterstitial.isAvailable(interstitialPlacementID) {
-                adIsAvailable()
-            }
-        } else if adType == AdType.rewarded {
-            bannerView.removeFromSuperview()
-            placementIdLabel.text = rewardedPlacementID
-            requestButton.setTitle("Request", for: .normal)
-            showButton.setTitle("Show", for: .normal)
-            if FYBRewarded.isAvailable(rewardedPlacementID) {
-                adIsAvailable()
-            }
-        } else {
-            placementIdLabel.text = bannerPlacementID
-            requestButton.setTitle("Show", for: .normal)
-            showButton.setTitle("Destroy", for: .normal)
-        }
-
         unitImage.image = UIImage(named: adType.rawValue)!
     }
 
