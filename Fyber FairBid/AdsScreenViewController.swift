@@ -10,9 +10,6 @@ class AdsScreenViewController: UIViewController {
 
     var adType: AdType!
 
-    private let disabledColor = UIColor(red: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
-    private let availableColor = UIColor(red: 29/255.0, green: 0/255.0, blue: 71/255.0, alpha: 1)
-
     private let interstitialPlacementID = "197405"
     private let rewardedPlacementID = "197406"
     private let bannerPlacementID = "197407"
@@ -62,7 +59,7 @@ class AdsScreenViewController: UIViewController {
         title = adType.rawValue
         navigationController?.navigationBar.topItem?.title = ""
 
-        showButton.backgroundColor = disabledColor
+        showButton.backgroundColor = .disabled
         showButton.isEnabled = false
 
         if adType == AdType.interstitial {
@@ -93,25 +90,28 @@ class AdsScreenViewController: UIViewController {
     // MARK: - Service
 
     @IBAction func requestAdClicked(_ sender: Any) {
-        if adType == AdType.interstitial {
+        switch adType! {
+        case .interstitial:
             FYBInterstitial.request(interstitialPlacementID)
-        } else if adType == AdType.rewarded {
+        case .rewarded:
             FYBRewarded.request(rewardedPlacementID)
-        } else {
+        case .banner:
             let bannerOptions = FYBBannerOptions()
-
             bannerOptions.placementId = bannerPlacementID as NSString
+
             FYBBanner.show(in: bannerView, position: .top, options: bannerOptions)
         }
+
         fetchingInProgress()
     }
 
     @IBAction func showOrDestroyAdClicked(_ sender: Any) {
-        if adType == AdType.interstitial {
+        switch adType! {
+        case .interstitial:
             FYBInterstitial.show(interstitialPlacementID)
-        } else if adType == AdType.rewarded {
+        case .rewarded:
             FYBRewarded.show(rewardedPlacementID)
-        } else {
+        case .banner:
             banner?.removeFromSuperview()
             adDismissed()
         }
@@ -129,16 +129,16 @@ class AdsScreenViewController: UIViewController {
     func fetchingInProgress() {
         requestButton.setTitleColor(.clear, for: .normal)
         requestButton.isEnabled = false
-        requestButton.backgroundColor = disabledColor
+        requestButton.backgroundColor = .disabled
         activityIndicator.startAnimating()
     }
 
     func adIsAvailable() {
         requestButton.setTitleColor(.white, for: .normal)
         requestButton.isEnabled = false
-        requestButton.backgroundColor = disabledColor
+        requestButton.backgroundColor = .disabled
         showButton.isEnabled = true
-        showButton.backgroundColor = availableColor
+        showButton.backgroundColor = .available
         activityIndicator.stopAnimating()
 
     }
@@ -146,9 +146,9 @@ class AdsScreenViewController: UIViewController {
     func adDismissed() {
         requestButton.setTitleColor(.white, for: .normal)
         requestButton.isEnabled = true
-        requestButton.backgroundColor = availableColor
+        requestButton.backgroundColor = .available
         showButton.isEnabled = false
-        showButton.backgroundColor = disabledColor
+        showButton.backgroundColor = .disabled
         activityIndicator.stopAnimating()
     }
 
@@ -308,6 +308,19 @@ extension AdsScreenViewController: FYBBannerDelegate {
 
     func banner(_ banner: FYBBannerAdView, didResizeToFrame frame: CGRect) {
         addEventToCallbacksList(#function)
+    }
+
+}
+
+
+private extension UIColor {
+
+    static var available: UIColor {
+        return UIColor(red: 29/255.0, green: 0/255.0, blue: 71/255.0, alpha: 1)
+    }
+
+    static var disabled: UIColor {
+        return UIColor(red: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
     }
 
 }
