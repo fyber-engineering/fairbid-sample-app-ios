@@ -1,9 +1,7 @@
 //
-//  HeadlineTableViewCell.swift
-//  Fyber FairBid
 //
-//  Created by Damian Rzeszot on 17/09/2019.
-//  Copyright © 2019 Fyber. All rights reserved.
+// Copyright (c) 2019 Fyber. All rights reserved.
+//
 //
 
 import UIKit

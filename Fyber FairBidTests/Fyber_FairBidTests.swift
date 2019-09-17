@@ -1,9 +1,7 @@
 //
-//  Fyber_FairBidTests.swift
-//  Fyber FairBidTests
 //
-//  Created by Nikita on 24/03/2019.
-//  Copyright © 2019 Fyber. All rights reserved.
+// Copyright (c) 2019 Fyber. All rights reserved.
+//
 //
 // swiftlint:disable type_name
 
