@@ -8,22 +8,10 @@
 
 import UIKit
 
-enum ObjectTypes: String, CaseIterable {
-    case interstitial = "Interstitial"
-    case rewarded = "Rewarded"
-    case banner = "Banner"
-    case testSuite = "Test Suite"
-}
-
-class HeadlineTableViewCell: UITableViewCell {
-    @IBOutlet weak var unitImage: UIImageView!
-    @IBOutlet weak var unitLabel: UILabel!
-}
-
 class ViewController: UIViewController {
 
-    @IBOutlet weak var adUnitsTable: UITableView!
-    @IBOutlet weak var versionLabel: UILabel!
+    @IBOutlet var adUnitsTable: UITableView!
+    @IBOutlet var versionLabel: UILabel!
 
     // MARK: - View lifecycle
 
