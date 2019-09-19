@@ -37,14 +37,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banner" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-x7-3Py">
-                                                    <rect key="frame" x="14" y="9" width="40" height="51"/>
+                                                    <rect key="frame" x="14" y="9" width="40" height="51.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="51" id="bkW-9A-A8o"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="51" id="bkW-9A-A8o"/>
                                                         <constraint firstAttribute="width" constant="40" id="xf3-Yi-SjS"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4U-R6-m9R">
-                                                    <rect key="frame" x="67" y="24" width="288" height="21"/>
+                                                    <rect key="frame" x="67" y="24" width="288" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
