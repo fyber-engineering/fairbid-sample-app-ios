@@ -1,4 +1,4 @@
-ruby ">= 2.3.1"
+ruby "2.6.4"
 
 source 'https://rubygems.org' do
     gem "cocoapods", '>= 1.5.3', :require => true
