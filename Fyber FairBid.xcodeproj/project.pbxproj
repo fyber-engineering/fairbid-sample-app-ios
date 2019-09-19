@@ -13,30 +13,11 @@
 		11F8A9482247E91400A816F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A9462247E91400A816F2 /* Main.storyboard */; };
 		11F8A94A2247E91500A816F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A9492247E91500A816F2 /* Assets.xcassets */; };
 		11F8A94D2247E91500A816F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A94B2247E91500A816F2 /* LaunchScreen.storyboard */; };
-		11F8A9582247E91500A816F2 /* Fyber_FairBidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9572247E91500A816F2 /* Fyber_FairBidTests.swift */; };
-		11F8A9632247E91500A816F2 /* Fyber_FairBidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9622247E91500A816F2 /* Fyber_FairBidUITests.swift */; };
 		2A51AF33225DE72900F07231 /* FairBidSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A51AF2A225DE17000F07231 /* FairBidSDK.framework */; };
 		2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */; };
 		2D0CD72D23312BF800D6168A /* HeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */; };
 		2D0CD72F23312C1900D6168A /* AdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72E23312C1900D6168A /* AdType.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		11F8A9542247E91500A816F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11F8A9372247E91400A816F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 11F8A93E2247E91400A816F2;
-			remoteInfo = "Fyber FairBid";
-		};
-		11F8A95F2247E91500A816F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11F8A9372247E91400A816F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 11F8A93E2247E91400A816F2;
-			remoteInfo = "Fyber FairBid";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		11F8A93F2247E91400A816F2 /* Fyber FairBid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fyber FairBid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,12 +27,6 @@
 		11F8A9492247E91500A816F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11F8A94C2247E91500A816F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11F8A94E2247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11F8A9532247E91500A816F2 /* Fyber FairBidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fyber FairBidTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11F8A9572247E91500A816F2 /* Fyber_FairBidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fyber_FairBidTests.swift; sourceTree = "<group>"; };
-		11F8A9592247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11F8A95E2247E91500A816F2 /* Fyber FairBidUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fyber FairBidUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11F8A9622247E91500A816F2 /* Fyber_FairBidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fyber_FairBidUITests.swift; sourceTree = "<group>"; };
-		11F8A9642247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A51AF2A225DE17000F07231 /* FairBidSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FairBidSDK.framework; path = Pods/FairBidSDK/FairBidSDK.framework; sourceTree = "<group>"; };
 		2A51AF34225DE77300F07231 /* FyberFairBid-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FyberFairBid-Bridging-Header.h"; sourceTree = "<group>"; };
 		2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewController.swift; sourceTree = "<group>"; };
@@ -72,20 +47,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11F8A9502247E91500A816F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11F8A95B2247E91500A816F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,8 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				11F8A9412247E91400A816F2 /* Fyber FairBid */,
-				11F8A9562247E91500A816F2 /* Fyber FairBidTests */,
-				11F8A9612247E91500A816F2 /* Fyber FairBidUITests */,
 				11F8A9402247E91400A816F2 /* Products */,
 				ED7F5DBC58E9B52268A8B83C /* Pods */,
 				9A140B4555DE3491D2F51FF4 /* Frameworks */,
@@ -105,8 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				11F8A93F2247E91400A816F2 /* Fyber FairBid.app */,
-				11F8A9532247E91500A816F2 /* Fyber FairBidTests.xctest */,
-				11F8A95E2247E91500A816F2 /* Fyber FairBidUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,24 +83,6 @@
 				11F8A94E2247E91500A816F2 /* Info.plist */,
 			);
 			path = "Fyber FairBid";
-			sourceTree = "<group>";
-		};
-		11F8A9562247E91500A816F2 /* Fyber FairBidTests */ = {
-			isa = PBXGroup;
-			children = (
-				11F8A9572247E91500A816F2 /* Fyber_FairBidTests.swift */,
-				11F8A9592247E91500A816F2 /* Info.plist */,
-			);
-			path = "Fyber FairBidTests";
-			sourceTree = "<group>";
-		};
-		11F8A9612247E91500A816F2 /* Fyber FairBidUITests */ = {
-			isa = PBXGroup;
-			children = (
-				11F8A9622247E91500A816F2 /* Fyber_FairBidUITests.swift */,
-				11F8A9642247E91500A816F2 /* Info.plist */,
-			);
-			path = "Fyber FairBidUITests";
 			sourceTree = "<group>";
 		};
 		9A140B4555DE3491D2F51FF4 /* Frameworks */ = {
@@ -187,42 +126,6 @@
 			productReference = 11F8A93F2247E91400A816F2 /* Fyber FairBid.app */;
 			productType = "com.apple.product-type.application";
 		};
-		11F8A9522247E91500A816F2 /* Fyber FairBidTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11F8A96A2247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBidTests" */;
-			buildPhases = (
-				11F8A94F2247E91500A816F2 /* Sources */,
-				11F8A9502247E91500A816F2 /* Frameworks */,
-				11F8A9512247E91500A816F2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				11F8A9552247E91500A816F2 /* PBXTargetDependency */,
-			);
-			name = "Fyber FairBidTests";
-			productName = "Fyber FairBidTests";
-			productReference = 11F8A9532247E91500A816F2 /* Fyber FairBidTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		11F8A95D2247E91500A816F2 /* Fyber FairBidUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11F8A96D2247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBidUITests" */;
-			buildPhases = (
-				11F8A95A2247E91500A816F2 /* Sources */,
-				11F8A95B2247E91500A816F2 /* Frameworks */,
-				11F8A95C2247E91500A816F2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				11F8A9602247E91500A816F2 /* PBXTargetDependency */,
-			);
-			name = "Fyber FairBidUITests";
-			productName = "Fyber FairBidUITests";
-			productReference = 11F8A95E2247E91500A816F2 /* Fyber FairBidUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -236,16 +139,6 @@
 					11F8A93E2247E91400A816F2 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1030;
-					};
-					11F8A9522247E91500A816F2 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1030;
-						TestTargetID = 11F8A93E2247E91400A816F2;
-					};
-					11F8A95D2247E91500A816F2 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1030;
-						TestTargetID = 11F8A93E2247E91400A816F2;
 					};
 				};
 			};
@@ -263,8 +156,6 @@
 			projectRoot = "";
 			targets = (
 				11F8A93E2247E91400A816F2 /* Fyber FairBid */,
-				11F8A9522247E91500A816F2 /* Fyber FairBidTests */,
-				11F8A95D2247E91500A816F2 /* Fyber FairBidUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,20 +168,6 @@
 				11F8A94D2247E91500A816F2 /* LaunchScreen.storyboard in Resources */,
 				11F8A94A2247E91500A816F2 /* Assets.xcassets in Resources */,
 				11F8A9482247E91400A816F2 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11F8A9512247E91500A816F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11F8A95C2247E91500A816F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,36 +246,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11F8A94F2247E91500A816F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11F8A9582247E91500A816F2 /* Fyber_FairBidTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11F8A95A2247E91500A816F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11F8A9632247E91500A816F2 /* Fyber_FairBidUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		11F8A9552247E91500A816F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 11F8A93E2247E91400A816F2 /* Fyber FairBid */;
-			targetProxy = 11F8A9542247E91500A816F2 /* PBXContainerItemProxy */;
-		};
-		11F8A9602247E91500A816F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 11F8A93E2247E91400A816F2 /* Fyber FairBid */;
-			targetProxy = 11F8A95F2247E91500A816F2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		11F8A9462247E91400A816F2 /* Main.storyboard */ = {
@@ -590,88 +438,6 @@
 			};
 			name = Release;
 		};
-		11F8A96B2247E91500A816F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P65VEJ9422;
-				INFOPLIST_FILE = "Fyber FairBidTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBidTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fyber FairBid.app/Fyber FairBid";
-			};
-			name = Debug;
-		};
-		11F8A96C2247E91500A816F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P65VEJ9422;
-				INFOPLIST_FILE = "Fyber FairBidTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBidTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fyber FairBid.app/Fyber FairBid";
-			};
-			name = Release;
-		};
-		11F8A96E2247E91500A816F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P65VEJ9422;
-				INFOPLIST_FILE = "Fyber FairBidUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBidUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Fyber FairBid";
-			};
-			name = Debug;
-		};
-		11F8A96F2247E91500A816F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P65VEJ9422;
-				INFOPLIST_FILE = "Fyber FairBidUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBidUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Fyber FairBid";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -689,24 +455,6 @@
 			buildConfigurations = (
 				11F8A9682247E91500A816F2 /* Debug */,
 				11F8A9692247E91500A816F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11F8A96A2247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBidTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11F8A96B2247E91500A816F2 /* Debug */,
-				11F8A96C2247E91500A816F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11F8A96D2247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBidUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11F8A96E2247E91500A816F2 /* Debug */,
-				11F8A96F2247E91500A816F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
