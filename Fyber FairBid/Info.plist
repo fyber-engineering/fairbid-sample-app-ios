@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -35,18 +37,18 @@
 	</array>
 	<key>UIRequiresFullScreen</key>
 	<true/>
-    <key>NSCalendarsUsageDescription</key>
-    <string>MRAID Protocol requirement</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>For ads targeting</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>For ads targeting</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>For ads targeting</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>MRAID Protocol requirement</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>MRAID Protocol requirement</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>MRAID Protocol requirement</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>For ads targeting</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>For ads targeting</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>For ads targeting</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>MRAID Protocol requirement</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MRAID Protocol requirement</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
