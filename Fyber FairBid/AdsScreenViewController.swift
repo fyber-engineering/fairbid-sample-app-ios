@@ -45,6 +45,7 @@ class AdsScreenViewController: UIViewController {
 
         formatter.dateFormat = "HH:mm:ss"
 
+        showButton.disable()
         switch adType! {
         case .interstitial:
             FYBInterstitial.delegate = self
@@ -78,7 +79,6 @@ class AdsScreenViewController: UIViewController {
         title = adType.rawValue
         navigationController?.navigationBar.topItem?.title = ""
 
-        showButton.disable()
         unitImage.image = UIImage(named: adType.rawValue)!
     }
 
