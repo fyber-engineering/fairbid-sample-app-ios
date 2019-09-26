@@ -92,7 +92,7 @@ class AdsScreenViewController: UIViewController {
             FYBRewarded.request(rewardedPlacementID)
         case .banner:
             let bannerOptions = FYBBannerOptions()
-            bannerOptions.placementId = bannerPlacementID as NSString
+            bannerOptions.placementId = bannerPlacementID
 
             FYBBanner.show(in: bannerView, position: .top, options: bannerOptions)
         }

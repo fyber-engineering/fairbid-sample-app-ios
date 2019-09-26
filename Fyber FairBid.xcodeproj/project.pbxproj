@@ -111,7 +111,6 @@
 			buildConfigurationList = 11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBid" */;
 			buildPhases = (
 				E9A0FD4265DDD59860DBAA37 /* [CP] Check Pods Manifest.lock */,
-				2D1900AD23339EDA009FAC36 /* ShellScript */,
 				11F8A93B2247E91400A816F2 /* Sources */,
 				11F8A93C2247E91400A816F2 /* Frameworks */,
 				11F8A93D2247E91400A816F2 /* Resources */,
@@ -174,24 +173,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D1900AD23339EDA009FAC36 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		A415FC57FF28C3BC30AFADAE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -1,20 +1,16 @@
 PODS:
-  - FairBidSDK (2.1.1)
-  - SwiftLint (0.35.0)
+  - FairBidSDK (2.2.0)
 
 DEPENDENCIES:
-  - FairBidSDK (= 2.1.1)
-  - SwiftLint
+  - FairBidSDK (= 2.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FairBidSDK
-    - SwiftLint
 
 SPEC CHECKSUMS:
-  FairBidSDK: 80524d0ecdac58ffd3b06316965fc235791dc85c
-  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
+  FairBidSDK: 857e10c8babb090a99c06123e32a86d38cd03bde
 
-PODFILE CHECKSUM: 6939f1f0d7913d8d23b5439e954c198bc7725a9c
+PODFILE CHECKSUM: d2bf90c91352ff25ae861a808c3421b5db8b9d7e
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.6.2
