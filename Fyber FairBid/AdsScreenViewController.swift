@@ -192,7 +192,7 @@ extension AdsScreenViewController: FYBInterstitialDelegate {
         addEventToCallbacksList(#function)
     }
 
-    func interstitialDidShow(_ placementName: String) {
+    func interstitialDidShow(_ placementName: String, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
 
@@ -231,7 +231,7 @@ extension AdsScreenViewController: FYBRewardedDelegate {
         addEventToCallbacksList(#function)
     }
 
-    func rewardedDidShow(_ placementName: String) {
+    func rewardedDidShow(_ placementName: String, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
 
@@ -275,7 +275,7 @@ extension AdsScreenViewController: FYBBannerDelegate {
         addEventToCallbacksList(#function)
     }
 
-    func bannerDidShow(_ banner: FYBBannerAdView) {
+    func bannerDidShow(_ banner: FYBBannerAdView, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
 
