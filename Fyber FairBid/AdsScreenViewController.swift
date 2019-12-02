@@ -273,6 +273,7 @@ extension AdsScreenViewController: FYBBannerDelegate {
 
     func bannerDidFail(toLoad placementName: String, withError error: Error) {
         addEventToCallbacksList(#function)
+        adDismissed()
     }
 
     func bannerDidShow(_ banner: FYBBannerAdView, impressionData: FYBImpressionData) {
