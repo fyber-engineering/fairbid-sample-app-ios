@@ -1,9 +1,9 @@
 use_frameworks!
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 target 'Fyber FairBid' do
-  pod 'FairBidSDK', '2.4.0'
+  pod 'FairBidSDK', '2.5.0'
 end
 
 post_install do |installer|
