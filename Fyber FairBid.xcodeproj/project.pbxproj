@@ -114,7 +114,7 @@
 				11F8A93B2247E91400A816F2 /* Sources */,
 				11F8A93C2247E91400A816F2 /* Frameworks */,
 				11F8A93D2247E91400A816F2 /* Resources */,
-				A415FC57FF28C3BC30AFADAE /* [CP] Copy Pods Resources */,
+				A9F9EE4836990C0064BD2250 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,21 +173,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A415FC57FF28C3BC30AFADAE /* [CP] Copy Pods Resources */ = {
+		A9F9EE4836990C0064BD2250 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9A0FD4265DDD59860DBAA37 /* [CP] Check Pods Manifest.lock */ = {
