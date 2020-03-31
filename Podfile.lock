@@ -1,8 +1,8 @@
 PODS:
-  - FairBidSDK (2.7.0)
+  - FairBidSDK (3.0.0)
 
 DEPENDENCIES:
-  - FairBidSDK (= 2.7.0)
+  - FairBidSDK (= 3.0.0)
 
 SPEC REPOS:
   trunk:
