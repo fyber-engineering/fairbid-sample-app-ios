@@ -4,6 +4,7 @@
 //
 //
 
+import FairBidSDK
 import UIKit
 
 @UIApplicationMain
