@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,7 +26,6 @@
 		11F8A9492247E91500A816F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11F8A94C2247E91500A816F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11F8A94E2247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A51AF34225DE77300F07231 /* FyberFairBid-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FyberFairBid-Bridging-Header.h"; sourceTree = "<group>"; };
 		2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewController.swift; sourceTree = "<group>"; };
 		2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTableViewCell.swift; sourceTree = "<group>"; };
 		2D0CD72E23312C1900D6168A /* AdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdType.swift; sourceTree = "<group>"; };
@@ -68,7 +67,6 @@
 		11F8A9412247E91400A816F2 /* Fyber FairBid */ = {
 			isa = PBXGroup;
 			children = (
-				2A51AF34225DE77300F07231 /* FyberFairBid-Bridging-Header.h */,
 				2D0CD72E23312C1900D6168A /* AdType.swift */,
 				11F8A9422247E91400A816F2 /* AppDelegate.swift */,
 				11F8A9442247E91400A816F2 /* ViewController.swift */,
@@ -96,7 +94,6 @@
 				AE059D1CAF1D6E9D47405828 /* Pods-Fyber FairBid.debug.xcconfig */,
 				3F8240ABD5456A3E8EEEF007 /* Pods-Fyber FairBid.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -382,7 +379,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Fyber FairBid/FyberFairBid-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,7 +405,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Fyber FairBid/FyberFairBid-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
