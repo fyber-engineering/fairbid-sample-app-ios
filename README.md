@@ -7,7 +7,6 @@ The sample app for our customers.
 
 * Xcode
 * CocoaPods
-* SwiftLint (optional)
 
 
 ## Setup
