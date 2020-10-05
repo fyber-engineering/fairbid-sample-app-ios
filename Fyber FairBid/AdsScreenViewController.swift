@@ -196,8 +196,8 @@ extension AdsScreenViewController: FYBInterstitialDelegate {
     func interstitialDidShow(_ placementName: String, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
-
-    func interstitialDidFail(toShow placementName: String, withError error: Error) {
+    
+    func interstitialDidFail(toShow placementId: String, withError error: Error, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
 
