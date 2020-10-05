@@ -235,8 +235,8 @@ extension AdsScreenViewController: FYBRewardedDelegate {
     func rewardedDidShow(_ placementName: String, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
-
-    func rewardedDidFail(toShow placementName: String, withError error: Error) {
+    
+    func rewardedDidFail(toShow placementId: String, withError error: Error, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
 
