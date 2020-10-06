@@ -183,17 +183,17 @@ extension AdsScreenViewController: UITableViewDataSource {
 
 extension AdsScreenViewController: FYBInterstitialDelegate {
 
-    func interstitialIsAvailable(_ placementName: String) {
+    func interstitialIsAvailable(_ placementId: String) {
         addEventToCallbacksList(#function)
         adIsAvailable()
     }
 
-    func interstitialIsUnavailable(_ placementName: String) {
+    func interstitialIsUnavailable(_ placementId: String) {
         adDismissed()
         addEventToCallbacksList(#function)
     }
 
-    func interstitialDidShow(_ placementName: String, impressionData: FYBImpressionData) {
+    func interstitialDidShow(_ placementId: String, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
     
@@ -201,11 +201,11 @@ extension AdsScreenViewController: FYBInterstitialDelegate {
         addEventToCallbacksList(#function)
     }
 
-    func interstitialDidClick(_ placementName: String) {
+    func interstitialDidClick(_ placementId: String) {
         addEventToCallbacksList(#function)
     }
 
-    func interstitialDidDismiss(_ placementName: String) {
+    func interstitialDidDismiss(_ placementId: String) {
         adDismissed()
         addEventToCallbacksList(#function)
     }
@@ -222,33 +222,33 @@ extension AdsScreenViewController: FYBInterstitialDelegate {
 
 extension AdsScreenViewController: FYBRewardedDelegate {
 
-    func rewardedIsAvailable(_ placementName: String) {
+    func rewardedIsAvailable(_ placementId: String) {
         adIsAvailable()
         addEventToCallbacksList(#function)
     }
 
-    func rewardedIsUnavailable(_ placementName: String) {
+    func rewardedIsUnavailable(_ placementId: String) {
         adDismissed()
         addEventToCallbacksList(#function)
     }
 
-    func rewardedDidShow(_ placementName: String, impressionData: FYBImpressionData) {
+    func rewardedDidShow(_ placementId: String, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
 
     func rewardedDidFail(toShow placementId: String, withError error: Error, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
     }
-
-    func rewardedDidClick(_ placementName: String) {
+    
+    func rewardedDidClick(_ placementId: String) {
         addEventToCallbacksList(#function)
     }
 
-    func rewardedDidComplete(_ placementName: String, userRewarded: Bool) {
+    func rewardedDidComplete(_ placementId: String, userRewarded: Bool) {
         addEventToCallbacksList(#function)
     }
 
-    func rewardedDidDismiss(_ placementName: String) {
+    func rewardedDidDismiss(_ placementId: String) {
         adDismissed()
         addEventToCallbacksList(#function)
     }
@@ -272,7 +272,7 @@ extension AdsScreenViewController: FYBBannerDelegate {
         addEventToCallbacksList(#function)
     }
 
-    func bannerDidFail(toLoad placementName: String, withError error: Error) {
+    func bannerDidFail(toLoad placementId: String, withError error: Error) {
         addEventToCallbacksList(#function)
         adDismissed()
     }
