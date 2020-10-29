@@ -9,6 +9,18 @@ Please note that when it comes to actually demonstrating the product "FairBid" a
 * Xcode
 * CocoaPods
 
+#### Navigating the sample code
+* SDK Initialization is located in the [AppDelegate](https://github.com/fyber-engineering/fairbid-sample-app-ios/blob/master/Fyber%20FairBid/AppDelegate.swift)
+    * Appid is defined in line 20 of [AppDelegate](https://github.com/fyber-engineering/fairbid-sample-app-ios/blob/master/Fyber%20FairBid/AppDelegate.swift)
+* Requesting Banner Ads - [AdsScreenViewController.swift](https://github.com/fyber-engineering/fairbid-sample-app-ios/blob/master/Fyber%20FairBid/AdsScreenViewController.swift)
+    * Placement id for Banner Ads is defined in line 16 [AdsScreenViewController.swift](https://github.com/fyber-engineering/fairbid-sample-app-ios/blob/master/Fyber%20FairBid/AdsScreenViewController.swift)
+* Requesting Interstitial Ads - [AdsScreenViewController.swift](https://github.com/fyber-engineering/fairbid-sample-app-ios/blob/master/Fyber%20FairBid/AdsScreenViewController.swift)
+    * Placement id for Interstitial Ads is defined in line 14 of [AdsScreenViewController.swift](https://github.com/fyber-engineering/fairbid-sample-app-ios/blob/master/Fyber%20FairBid/AdsScreenViewController.swift)
+* Requesting Rewarded Ads - [AdsScreenViewController.swift](https://github.com/fyber-engineering/fairbid-sample-app-ios/blob/master/Fyber%20FairBid/AdsScreenViewController.swift)
+    * Placement id for Rewarded Ads is defined in line 15 of [AdsScreenViewController.swift](https://github.com/fyber-engineering/fairbid-sample-app-ios/blob/master/Fyber%20FairBid/AdsScreenViewController.swift)
+
+#### Support and documentation
+Please visit our [documentation](https://developer.fyber.com/hc/en-us/sections/360002888357-FairBid-iOS-Configuration)
 
 ## Setup
 
