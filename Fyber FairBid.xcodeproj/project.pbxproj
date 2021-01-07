@@ -105,6 +105,7 @@
 			buildConfigurationList = 11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBid" */;
 			buildPhases = (
 				27DE8565C131B172B5FF0E03 /* [CP] Check Pods Manifest.lock */,
+				AE7457C625A7506200EB3831 /* ShellScript */,
 				11F8A93B2247E91400A816F2 /* Sources */,
 				11F8A93C2247E91400A816F2 /* Frameworks */,
 				11F8A93D2247E91400A816F2 /* Resources */,
@@ -205,6 +206,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fyber FairBid/Pods-Fyber FairBid-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AE7457C625A7506200EB3831 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v skad_updater &> /dev/null\nthen\necho \"$INFOPLIST_FILE\" | sed 's/ /\\\\ /g' | (read SANITIZED_PATH; skad_updater --plist_file_path \"$SANITIZED_PATH\" --network_list=FairBidSDK --pod_file_path ./Podfile; plutil -convert xml1 \"$SANITIZED_PATH\")\nelse\necho \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
