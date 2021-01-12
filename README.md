@@ -11,6 +11,12 @@ Please note that when it comes to actually demonstrating the product "FairBid" a
 
 
 ## Setup
+Install [SKAd_updater](https://github.com/fyber-engineering/SKAd_updater) by using [Homebrew](https://brew.sh)
+
+```sh
+brew tap fyber-engineering/skad_updater
+brew install skad_updater
+```
 
 Install the pods
 
