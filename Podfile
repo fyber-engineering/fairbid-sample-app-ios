@@ -3,5 +3,5 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 
 target 'Fyber FairBid' do
-  pod 'FairBidSDK', '3.21.1'
+  pod 'FairBidSDK', '3.22.0'
 end
