@@ -11,10 +11,16 @@ class AdsScreenViewController: UIViewController {
 
     var adType: AdType!
 
-    private let interstitialPlacementID = "197405"
-    private let rewardedPlacementID = "197406"
-    private let bannerPlacementID = "197407"
-
+    private let interstitialPlacementID = "208904" //(Mintegral: 161687)
+    private let rewardedPlacementID = "208905" //(Mintegral: 161745)
+    private let bannerPlacementID = "545668" //(Mintegral: 1724179)
+    
+    /*
+    private let secondInterstitialPlacementID = "208906" //(Mintegral: 161689)
+    private let secondRewardedPlacementID = "208907" //(Mintegral: 161747)
+    private let secondBannerPlacementID = "551489" //(Mintegral: 1733319)
+    */
+    
     let formatter = DateFormatter()
 
     private var banner: FYBBannerAdView?
