@@ -1,16 +1,58 @@
 PODS:
-  - FairBidSDK (3.28.0)
+  - FairBidSDK (3.25.0)
+  - MintegralAdSDK (7.1.1.0):
+    - MintegralAdSDK/BannerAd (= 7.1.1.0)
+    - MintegralAdSDK/BidBannerAd (= 7.1.1.0)
+    - MintegralAdSDK/BidInterstitialVideoAd (= 7.1.1.0)
+    - MintegralAdSDK/BidNativeAd (= 7.1.1.0)
+    - MintegralAdSDK/BidNewInterstitialAd (= 7.1.1.0)
+    - MintegralAdSDK/BidRewardVideoAd (= 7.1.1.0)
+    - MintegralAdSDK/InterstitialVideoAd (= 7.1.1.0)
+    - MintegralAdSDK/NativeAd (= 7.1.1.0)
+    - MintegralAdSDK/NewInterstitialAd (= 7.1.1.0)
+    - MintegralAdSDK/RewardVideoAd (= 7.1.1.0)
+  - MintegralAdSDK/BannerAd (7.1.1.0):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidBannerAd (7.1.1.0):
+    - MintegralAdSDK/BannerAd
+    - MintegralAdSDK/BidNativeAd
+  - MintegralAdSDK/BidInterstitialVideoAd (7.1.1.0):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/InterstitialVideoAd
+  - MintegralAdSDK/BidNativeAd (7.1.1.0):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidNewInterstitialAd (7.1.1.0):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/NewInterstitialAd
+  - MintegralAdSDK/BidRewardVideoAd (7.1.1.0):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/RewardVideoAd
+  - MintegralAdSDK/InterstitialVideoAd (7.1.1.0):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/NativeAd (7.1.1.0)
+  - MintegralAdSDK/NewInterstitialAd (7.1.1.0):
+    - MintegralAdSDK/InterstitialVideoAd
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/RewardVideoAd (7.1.1.0):
+    - MintegralAdSDK/NativeAd
 
 DEPENDENCIES:
-  - FairBidSDK (= 3.28.0)
+  - FairBidSDK (= 3.25.0)
+  - MintegralAdSDK (= 7.1.1.0)
+  - MintegralAdSDK/BidInterstitialVideoAd (= 7.1.1.0)
+  - MintegralAdSDK/BidRewardVideoAd (= 7.1.1.0)
+  - MintegralAdSDK/InterstitialVideoAd (= 7.1.1.0)
+  - MintegralAdSDK/RewardVideoAd (= 7.1.1.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - FairBidSDK
+    - MintegralAdSDK
 
 SPEC CHECKSUMS:
-  FairBidSDK: 473c36188467896143fd3b372b6325ac25f101ee
+  FairBidSDK: e70ca0d83f8a68c2195049cb279dc599fbdc7e8a
+  MintegralAdSDK: 6f4a39e4801633686b58583e3974b8c7c5c064ef
 
-PODFILE CHECKSUM: 4cfc965b668e8483f35c23285aef71b233da6e8b
+PODFILE CHECKSUM: 9bed1bca3bba865489387bbc98753eb554a922aa
 
 COCOAPODS: 1.11.3
