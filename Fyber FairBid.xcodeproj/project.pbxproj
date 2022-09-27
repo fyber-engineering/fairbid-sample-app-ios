@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11F8A93F2247E91400A816F2 /* Fyber FairBid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fyber FairBid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F8A93F2247E91400A816F2 /* DT FairBid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DT FairBid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F8A9422247E91400A816F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11F8A9442247E91400A816F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11F8A9472247E91400A816F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		11F8A9402247E91400A816F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				11F8A93F2247E91400A816F2 /* Fyber FairBid.app */,
+				11F8A93F2247E91400A816F2 /* DT FairBid.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		11F8A93E2247E91400A816F2 /* Fyber FairBid */ = {
+		11F8A93E2247E91400A816F2 /* DT FairBid */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBid" */;
+			buildConfigurationList = 11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "DT FairBid" */;
 			buildPhases = (
 				27DE8565C131B172B5FF0E03 /* [CP] Check Pods Manifest.lock */,
 				AE7457C625A7506200EB3831 /* ShellScript */,
@@ -115,9 +115,9 @@
 			);
 			dependencies = (
 			);
-			name = "Fyber FairBid";
+			name = "DT FairBid";
 			productName = "Fyber FairBid";
-			productReference = 11F8A93F2247E91400A816F2 /* Fyber FairBid.app */;
+			productReference = 11F8A93F2247E91400A816F2 /* DT FairBid.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				11F8A93E2247E91400A816F2 /* Fyber FairBid */,
+				11F8A93E2247E91400A816F2 /* DT FairBid */,
 			);
 		};
 /* End PBXProject section */
@@ -445,7 +445,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "Fyber FairBid" */ = {
+		11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "DT FairBid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11F8A9682247E91500A816F2 /* Debug */,
