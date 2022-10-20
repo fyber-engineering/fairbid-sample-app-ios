@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11F8A9432247E91400A816F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9422247E91400A816F2 /* AppDelegate.swift */; };
+		11F8A9452247E91400A816F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8A9442247E91400A816F2 /* ViewController.swift */; };
+		11F8A9482247E91400A816F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A9462247E91400A816F2 /* Main.storyboard */; };
+		11F8A94A2247E91500A816F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A9492247E91500A816F2 /* Assets.xcassets */; };
+		11F8A94D2247E91500A816F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F8A94B2247E91500A816F2 /* LaunchScreen.storyboard */; };
+		208771AA8A27450F2E6B7CAB /* Pods_DT_FairBid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228D292B4711B1FCD9BA5D2D /* Pods_DT_FairBid.framework */; };
+		2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */; };
+		2D0CD72D23312BF800D6168A /* HeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */; };
+		2D0CD72F23312C1900D6168A /* AdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72E23312C1900D6168A /* AdType.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11F8A93F2247E91400A816F2 /* DT FairBid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DT FairBid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F8A9422247E91400A816F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11F8A9442247E91400A816F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11F8A9472247E91400A816F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11F8A9492247E91500A816F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11F8A94C2247E91500A816F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11F8A94E2247E91500A816F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228D292B4711B1FCD9BA5D2D /* Pods_DT_FairBid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DT_FairBid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewController.swift; sourceTree = "<group>"; };
+		2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTableViewCell.swift; sourceTree = "<group>"; };
+		2D0CD72E23312C1900D6168A /* AdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdType.swift; sourceTree = "<group>"; };
+		A627335B313B8DEB03559FA3 /* Pods-DT FairBid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT FairBid.debug.xcconfig"; path = "Target Support Files/Pods-DT FairBid/Pods-DT FairBid.debug.xcconfig"; sourceTree = "<group>"; };
+		D42880A064E598CD1B290DF3 /* Pods-DT FairBid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT FairBid.release.xcconfig"; path = "Target Support Files/Pods-DT FairBid/Pods-DT FairBid.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11F8A93C2247E91400A816F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208771AA8A27450F2E6B7CAB /* Pods_DT_FairBid.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11F8A9362247E91400A816F2 = {
+			isa = PBXGroup;
+			children = (
+				11F8A9412247E91400A816F2 /* DT FairBid */,
+				11F8A9402247E91400A816F2 /* Products */,
+				32ABDC3DBDD0662A5E9B6072 /* Pods */,
+				E31833E32EFBDB63488AA07C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11F8A9402247E91400A816F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11F8A93F2247E91400A816F2 /* DT FairBid.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11F8A9412247E91400A816F2 /* DT FairBid */ = {
+			isa = PBXGroup;
+			children = (
+				2D0CD72E23312C1900D6168A /* AdType.swift */,
+				11F8A9422247E91400A816F2 /* AppDelegate.swift */,
+				11F8A9442247E91400A816F2 /* ViewController.swift */,
+				2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */,
+				2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */,
+				11F8A9462247E91400A816F2 /* Main.storyboard */,
+				11F8A9492247E91500A816F2 /* Assets.xcassets */,
+				11F8A94B2247E91500A816F2 /* LaunchScreen.storyboard */,
+				11F8A94E2247E91500A816F2 /* Info.plist */,
+			);
+			path = "DT FairBid";
+			sourceTree = "<group>";
+		};
+		32ABDC3DBDD0662A5E9B6072 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A627335B313B8DEB03559FA3 /* Pods-DT FairBid.debug.xcconfig */,
+				D42880A064E598CD1B290DF3 /* Pods-DT FairBid.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E31833E32EFBDB63488AA07C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				228D292B4711B1FCD9BA5D2D /* Pods_DT_FairBid.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11F8A93E2247E91400A816F2 /* DT FairBid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "DT FairBid" */;
+			buildPhases = (
+				473C43C3C95B30C4E55848B7 /* [CP] Check Pods Manifest.lock */,
+				AE7457C625A7506200EB3831 /* ShellScript */,
+				11F8A93B2247E91400A816F2 /* Sources */,
+				11F8A93C2247E91400A816F2 /* Frameworks */,
+				11F8A93D2247E91400A816F2 /* Resources */,
+				390A3DC034E3A3B19060297A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DT FairBid";
+			productName = "Fyber FairBid";
+			productReference = 11F8A93F2247E91400A816F2 /* DT FairBid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11F8A9372247E91400A816F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = Fyber;
+				TargetAttributes = {
+					11F8A93E2247E91400A816F2 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
+					};
+				};
+			};
+			buildConfigurationList = 11F8A93A2247E91400A816F2 /* Build configuration list for PBXProject "DT FairBid" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11F8A9362247E91400A816F2;
+			productRefGroup = 11F8A9402247E91400A816F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11F8A93E2247E91400A816F2 /* DT FairBid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11F8A93D2247E91400A816F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F8A94D2247E91500A816F2 /* LaunchScreen.storyboard in Resources */,
+				11F8A94A2247E91500A816F2 /* Assets.xcassets in Resources */,
+				11F8A9482247E91400A816F2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		390A3DC034E3A3B19060297A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		473C43C3C95B30C4E55848B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DT FairBid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE7457C625A7506200EB3831 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v skad_updater &> /dev/null\nthen\necho \"$INFOPLIST_FILE\" | sed 's/ /\\\\ /g' | (read SANITIZED_PATH; skad_updater --plist_file_path \"$SANITIZED_PATH\" --network_list=FairBidSDK --pod_file_path ./Podfile; plutil -convert xml1 \"$SANITIZED_PATH\")\nelse\necho \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11F8A93B2247E91400A816F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D0CD72F23312C1900D6168A /* AdType.swift in Sources */,
+				11F8A9452247E91400A816F2 /* ViewController.swift in Sources */,
+				11F8A9432247E91400A816F2 /* AppDelegate.swift in Sources */,
+				2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */,
+				2D0CD72D23312BF800D6168A /* HeadlineTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		11F8A9462247E91400A816F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11F8A9472247E91400A816F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11F8A94B2247E91500A816F2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11F8A94C2247E91500A816F2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11F8A9652247E91500A816F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11F8A9662247E91500A816F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11F8A9682247E91500A816F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A627335B313B8DEB03559FA3 /* Pods-DT FairBid.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = P65VEJ9422;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FairBidSDK",
+				);
+				INFOPLIST_FILE = "DT FairBid/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBid";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Debug;
+		};
+		11F8A9692247E91500A816F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42880A064E598CD1B290DF3 /* Pods-DT FairBid.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = P65VEJ9422;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FairBidSDK",
+				);
+				INFOPLIST_FILE = "DT FairBid/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBid";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11F8A93A2247E91400A816F2 /* Build configuration list for PBXProject "DT FairBid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F8A9652247E91500A816F2 /* Debug */,
+				11F8A9662247E91500A816F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11F8A9672247E91500A816F2 /* Build configuration list for PBXNativeTarget "DT FairBid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F8A9682247E91500A816F2 /* Debug */,
+				11F8A9692247E91500A816F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11F8A9372247E91400A816F2 /* Project object */;
+}
