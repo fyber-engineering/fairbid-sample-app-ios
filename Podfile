@@ -3,5 +3,6 @@ platform :ios, '11.0'
 
 target 'DT FairBid' do
   use_frameworks!
-  pod 'FairBidSDK', '3.31.2'
+  project "DT FairBid"
+  pod 'FairBidSDK', '3.33.0'
 end
