@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         adUnitsTable.tableFooterView = UIView(frame: .zero)
-        versionLabel.text = "Fyber FairBid " + FairBid.version()
+        versionLabel.text = "DT FairBid " + FairBid.version()
     }
 
     override func viewWillAppear(_ animated: Bool) {
