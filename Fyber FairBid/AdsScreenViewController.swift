@@ -11,9 +11,9 @@ class AdsScreenViewController: UIViewController {
 
     var adType: AdType!
 
-    private let interstitialPlacementID = "197405"
-    private let rewardedPlacementID = "197406"
-    private let bannerPlacementID = "197407"
+    private let interstitialPlacementID = "623863"
+    private let rewardedPlacementID = "623873"
+    private let bannerPlacementID = "623875"
 
     let formatter = DateFormatter()
 
@@ -92,10 +92,10 @@ class AdsScreenViewController: UIViewController {
         case .rewarded:
             FYBRewarded.request(rewardedPlacementID)
         case .banner:
-            let bannerOptions = FYBBannerOptions()
+            let bannerOptions = FYBBannerOptions(placementId: bannerPlacementID, size: .smart)
+            bannerOptions.position = .top
             bannerOptions.placementId = bannerPlacementID
-
-            FYBBanner.show(in: bannerView, position: .top, options: bannerOptions)
+            FYBBanner.show(in: banner, options: bannerOptions)
         }
 
         fetchingInProgress()
