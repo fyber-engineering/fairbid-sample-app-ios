@@ -1,16 +1,16 @@
 PODS:
-  - FairBidSDK (3.32.0)
+  - FairBidSDK (3.32.1)
 
 DEPENDENCIES:
-  - FairBidSDK (= 3.32.0)
+  - FairBidSDK (= 3.32.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - FairBidSDK
 
 SPEC CHECKSUMS:
-  FairBidSDK: 7f5c7b44b10198fdcc2d07d1cf806d31a159528f
+  FairBidSDK: cf653fd5fd450cd7b98cfad2e0b8715abb3b25f9
 
-PODFILE CHECKSUM: ce965bd7171929a84ea7ab1ae325b910d2029572
+PODFILE CHECKSUM: c8f77ecf74fa381e5d4cb7b2106feac79c8e46ba
 
 COCOAPODS: 1.11.3
