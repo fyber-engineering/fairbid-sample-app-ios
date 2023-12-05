@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */; };
 		2D0CD72D23312BF800D6168A /* HeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */; };
 		2D0CD72F23312C1900D6168A /* AdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72E23312C1900D6168A /* AdType.swift */; };
+		9D7F1E022B1E0BC70084444D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F1E012B1E0BC70084444D /* MainView.swift */; };
+		9D7F1E042B1E161E0084444D /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F1E032B1E161E0084444D /* MainApp.swift */; };
+		9D7F1E062B1E1CF80084444D /* AdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F1E052B1E1CF80084444D /* AdScreen.swift */; };
+		9D7F1E0A2B1E1D1D0084444D /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F1E092B1E1D1D0084444D /* AdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewController.swift; sourceTree = "<group>"; };
 		2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTableViewCell.swift; sourceTree = "<group>"; };
 		2D0CD72E23312C1900D6168A /* AdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdType.swift; sourceTree = "<group>"; };
+		9D7F1E012B1E0BC70084444D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9D7F1E032B1E161E0084444D /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
+		9D7F1E052B1E1CF80084444D /* AdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdScreen.swift; sourceTree = "<group>"; };
+		9D7F1E092B1E1D1D0084444D /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		A627335B313B8DEB03559FA3 /* Pods-DT FairBid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT FairBid.debug.xcconfig"; path = "Target Support Files/Pods-DT FairBid/Pods-DT FairBid.debug.xcconfig"; sourceTree = "<group>"; };
 		D42880A064E598CD1B290DF3 /* Pods-DT FairBid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT FairBid.release.xcconfig"; path = "Target Support Files/Pods-DT FairBid/Pods-DT FairBid.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +75,7 @@
 		11F8A9412247E91400A816F2 /* DT FairBid */ = {
 			isa = PBXGroup;
 			children = (
+				9D7F1E002B1E0BA30084444D /* SwiftUI */,
 				2D0CD72E23312C1900D6168A /* AdType.swift */,
 				11F8A9422247E91400A816F2 /* AppDelegate.swift */,
 				11F8A9442247E91400A816F2 /* ViewController.swift */,
@@ -87,6 +96,33 @@
 				D42880A064E598CD1B290DF3 /* Pods-DT FairBid.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9D7F1E002B1E0BA30084444D /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				9D7F1E082B1E1D080084444D /* Ad View */,
+				9D7F1E072B1E1CFB0084444D /* Main Screen */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		9D7F1E072B1E1CFB0084444D /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9D7F1E012B1E0BC70084444D /* MainView.swift */,
+				9D7F1E032B1E161E0084444D /* MainApp.swift */,
+			);
+			path = "Main Screen";
+			sourceTree = "<group>";
+		};
+		9D7F1E082B1E1D080084444D /* Ad View */ = {
+			isa = PBXGroup;
+			children = (
+				9D7F1E052B1E1CF80084444D /* AdScreen.swift */,
+				9D7F1E092B1E1D1D0084444D /* AdView.swift */,
+			);
+			path = "Ad View";
 			sourceTree = "<group>";
 		};
 		E31833E32EFBDB63488AA07C /* Frameworks */ = {
@@ -233,9 +269,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0CD72F23312C1900D6168A /* AdType.swift in Sources */,
+				9D7F1E022B1E0BC70084444D /* MainView.swift in Sources */,
+				9D7F1E042B1E161E0084444D /* MainApp.swift in Sources */,
 				11F8A9452247E91400A816F2 /* ViewController.swift in Sources */,
 				11F8A9432247E91400A816F2 /* AppDelegate.swift in Sources */,
 				2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */,
+				9D7F1E0A2B1E1D1D0084444D /* AdView.swift in Sources */,
+				9D7F1E062B1E1CF80084444D /* AdScreen.swift in Sources */,
 				2D0CD72D23312BF800D6168A /* HeadlineTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +434,7 @@
 					"$(PROJECT_DIR)/Pods/FairBidSDK",
 				);
 				INFOPLIST_FILE = "DT FairBid/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,7 +463,7 @@
 					"$(PROJECT_DIR)/Pods/FairBidSDK",
 				);
 				INFOPLIST_FILE = "DT FairBid/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
