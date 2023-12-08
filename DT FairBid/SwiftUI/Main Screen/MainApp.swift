@@ -7,12 +7,27 @@
 //
 
 import SwiftUI
+import FairBidSDK
 
-//@main
-//struct MainApp: App {
-//    var body: some Scene {
-//        WindowGroup {
-//            MainView()
-//        }
-//    }
-//}
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        let options = FYBStartOptions()
+        options.autoRequestingEnabled = false
+        options.logLevel = .verbose
+
+        FairBid.start(withAppId: "109613", options: options)
+
+        return true
+    }
+}
+
+@main
+struct MainApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
+    var body: some Scene {
+        WindowGroup {
+            MainView()
+        }
+    }
+}
