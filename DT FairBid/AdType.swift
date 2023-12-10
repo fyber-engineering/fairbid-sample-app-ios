@@ -13,7 +13,7 @@ enum AdType: String, CaseIterable {
     var placementId: String {
         switch self {
         case .interstitial:
-            return "197405"
+            return "213766"//"197405"
         case .rewarded:
             return "197406"
         case .banner:

@@ -13,19 +13,18 @@ struct AdView: View {
     let primaryColor = UIColor(_colorLiteralRed: 29/255, green: 0/255, blue: 71/255, alpha: 1)
     let backgroundColor = UIColor(_colorLiteralRed: 246/255, green: 246/255, blue: 247/255, alpha: 1.0)
     let disabledColor = UIColor(_colorLiteralRed: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
-    let viewModel = AdViewModel()
+    @StateObject private var viewModel = AdViewModel(adType: .interstitial)
 
     let adType: AdType
-    @State private var listItems: [String] = []
-    @State private var isRequestLoading: Bool = false
     @Environment(\.presentationMode) var presentationMode
 
     private var isBottomButtonVisible: Bool {
-        return !listItems.isEmpty
+        return !viewModel.callbackStrings.isEmpty
     }
 
     init(adType: AdType) {
         self.adType = adType
+        _viewModel = StateObject(wrappedValue: AdViewModel(adType: adType))
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.titleTextAttributes = [.foregroundColor: primaryColor]
         UINavigationBar.appearance().standardAppearance = coloredAppearance
@@ -52,7 +51,7 @@ struct AdView: View {
                     Spacer()
                 })
                 HStack {
-                    if isRequestLoading {
+                    if viewModel.isRequestLoading {
                         Button(action: {}) {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: Color(uiColor: primaryColor)))
@@ -64,54 +63,70 @@ struct AdView: View {
                         .cornerRadius(4)
                         .font(.system(size: 15))
                         .fontWeight(.regular)
-                        .accentColor(Color(uiColor: disabledColor))
-                        .disabled(isRequestLoading)
+                        .disabled(viewModel.isAdAvailable)
+                        .disabled(viewModel.isAdAvailable)
                     } else {
                         Button(adType.leftButtonText) {
                             requestAdClicked()
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color(uiColor: primaryColor))
+                        .background(!viewModel.isAdAvailable ? Color(uiColor: primaryColor) : Color(uiColor: disabledColor))
                         .foregroundColor(.white)
                         .cornerRadius(4)
                         .font(.system(size: 15))
                         .fontWeight(.regular)
                         .accentColor(Color(uiColor: disabledColor))
-                        .disabled(isRequestLoading)
+                        .disabled(viewModel.isAdAvailable)
                     }
 
                     Button(adType.rightButtonText) {
-                        // Handle Button 2 tap
+                        showButtonClicked()
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(isRequestLoading ? Color(uiColor: primaryColor) : Color(uiColor: disabledColor))
+                    .background(viewModel.isAdAvailable ? Color(uiColor: primaryColor) : Color(uiColor: disabledColor))
                     .background(Color(uiColor: primaryColor))
                     .accentColor(Color(uiColor: disabledColor))
                     .foregroundColor(.white)
                     .cornerRadius(4)
                     .font(.system(size: 15))
                     .fontWeight(.regular)
-                    .disabled(isRequestLoading)
+                    .disabled(!viewModel.isAdAvailable)
                 }
                 .frame(height: 48)
                 .padding()
             Spacer()
-
-            List {
-                ForEach(listItems, id: \.self) { listItem in
-                    Text(listItem)
-                }
-            }
-            .listStyle(PlainListStyle())
-            .background(Color.white) // Set the background color of the list
-
-            Spacer()
             if isBottomButtonVisible {
+                VStack(alignment: .leading) {
+                    HStack(alignment: .top) {
+                        Text("CALLBACKS LIST")
+                            .font(.system(size: 17))
+                            .foregroundColor(Color(uiColor: .lightGray))
+                            .frame(height: 53)
+                            .padding(.top, 10)
+                            .padding(.leading, 16)
+                            .padding(.bottom, -5)
+                        Spacer()
+                    }
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(Color(uiColor: .lightGray))
+
+                    List {
+
+                        ForEach(viewModel.callbackStrings, id: \.self) { listItem in
+                            Text(listItem)
+                        }
+                    }
+                    .padding(.top, 0)
+                    .listStyle(PlainListStyle())
+                    .background(Color.white) // Set the background color of the list
+                    Spacer()
+                }
                 HStack {
                     Button("Clean callbacks list") {
-                        listItems.removeAll()
+                        viewModel.callbackStrings.removeAll()
                     }
                     .frame(height: 48)
                     .frame(maxWidth: .infinity)
@@ -137,15 +152,10 @@ struct AdView: View {
                     presentationMode.wrappedValue.dismiss()
                 })
             .onAppear {
-                    // Append items to the list when the view appears
-                    listItems.append("Item 1")
-                    listItems.append("Item 2")
-                    listItems.append("Item 3")
-                    // Add more items as needed
             }
     }
 
-    func requestAdClicked() {
+    private func requestAdClicked() {
         switch adType {
         case .interstitial:
             FYBInterstitial.request(adType.placementId)
@@ -161,7 +171,24 @@ struct AdView: View {
 //            FYBBanner.show(in: bannerView, options: mrecOptions)
         }
 
-        isRequestLoading = true
+        viewModel.isRequestLoading = true
+    }
+
+    private func showButtonClicked() {
+        switch adType {
+        case .interstitial:
+            FYBInterstitial.show(adType.placementId)
+        case .rewarded:
+            FYBRewarded.show(adType.placementId)
+        case .banner:
+            break
+//            banner?.removeFromSuperview()
+//            adDismissed()
+        case .mrec:
+            break
+//            banner?.removeFromSuperview()
+//            adDismissed()
+        }
     }
 }
 
@@ -169,98 +196,135 @@ struct AdView: View {
     AdView(adType: .mrec)
 }
 
-class AdViewModel: ObservableObject {
-    let delegate = Delegate()
+final class AdViewModel: NSObject, ObservableObject {
+    let adType: AdType
+    @Published var isRequestLoading: Bool = false
+    @Published var isAdAvailable: Bool = false
+    @Published var callbackStrings: [String] = []
 
+    let formatter = DateFormatter()
 
+    init(adType: AdType) {
+        self.adType = adType
+        super.init()
+
+        formatter.dateFormat = "HH:mm:ss"
+        setupDelegates()
+    }
+
+    private func setupDelegates() {
+        switch adType {
+        case .interstitial:
+            FYBInterstitial.delegate = self
+            if FYBInterstitial.isAvailable(adType.placementId) {
+                isAdAvailable = true
+            }
+        case .rewarded:
+            FYBRewarded.delegate = self
+            if FYBRewarded.isAvailable(adType.placementId) {
+                isAdAvailable = true
+            }
+        case .banner:
+            break
+//            FYBBanner.delegate = self
+//            placementIdLabel.text = bannerPlacementID
+        case .mrec:
+            break
+//            FYBBanner.delegate = self
+//            placementIdLabel.text = mrecPlacementID
+        }
+    }
+
+    func addEventToCallbacksList(_ callback: String) {
+        callbackStrings.append(formatter.string(from: Date()) + " " + callback)
+    }
 }
 
-class Delegate: NSObject {
-}
-
-extension Delegate: FYBInterstitialDelegate {
+extension AdViewModel: FYBInterstitialDelegate {
 
     func interstitialIsAvailable(_ placementName: String) {
-//        addEventToCallbacksList(#function)
-//        adIsAvailable()
+        isRequestLoading = false
+        addEventToCallbacksList(#function)
+        isAdAvailable = true
     }
 
     func interstitialIsUnavailable(_ placementName: String) {
-//        adDismissed()
-//        addEventToCallbacksList(#function)
+        isAdAvailable = false
+        isRequestLoading = false
+        addEventToCallbacksList(#function)
     }
 
     func interstitialDidShow(_ placementName: String, impressionData: FYBImpressionData) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func interstitialDidFail(toShow placementId: String, withError error: Error, impressionData: FYBImpressionData) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func interstitialDidClick(_ placementName: String) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func interstitialDidDismiss(_ placementName: String) {
-//        adDismissed()
-//        addEventToCallbacksList(#function)
+        isAdAvailable = false
+        addEventToCallbacksList(#function)
     }
 
     func interstitialWillStartAudio() {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func interstitialDidFinishAudio() {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
 }
 
-extension Delegate: FYBRewardedDelegate {
+extension AdViewModel: FYBRewardedDelegate {
 
     func rewardedIsAvailable(_ placementName: String) {
 //        adIsAvailable()
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func rewardedIsUnavailable(_ placementName: String) {
 //        adDismissed()
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func rewardedDidShow(_ placementName: String, impressionData: FYBImpressionData) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func rewardedDidFail(toShow placementName: String, withError error: Error) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func rewardedDidClick(_ placementName: String) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func rewardedDidComplete(_ placementName: String, userRewarded: Bool) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func rewardedDidDismiss(_ placementName: String) {
 //        adDismissed()
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func rewardedWillStartAudio() {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func rewardedDidFinishAudio() {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
 }
 
-extension Delegate: FYBBannerDelegate {
+extension AdViewModel: FYBBannerDelegate {
 
     func bannerDidLoad(_ banner: FYBBannerAdView) {
 //        self.banner = banner
