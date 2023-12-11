@@ -17,6 +17,7 @@ struct AdView: View {
 
     let adType: AdType
     @Environment(\.presentationMode) var presentationMode
+    @State var shouldDisplayBanner = false
 
     private var isBottomButtonVisible: Bool {
         return !viewModel.callbackStrings.isEmpty
@@ -95,8 +96,17 @@ struct AdView: View {
                     .disabled(!viewModel.isAdAvailable)
                 }
                 .frame(height: 48)
-                .padding()
+                .padding(.bottom, 30)
+                .padding(.leading, 16)
+                .padding(.trailing, 16)
+                .padding(.top, 10)
+            if adType.needsBannerView {
+                BannerView(shouldDisplayBanner: $shouldDisplayBanner,
+                           isAdAvailable: $viewModel.isAdAvailable, bannerOptions: FYBBannerOptions(placementId: adType.placementId, size: adType == .mrec ? .MREC : .smart))
+                    .frame(height: adType.bannerViewHeight)
+            }
             Spacer()
+
             if isBottomButtonVisible {
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
@@ -118,7 +128,8 @@ struct AdView: View {
                         ForEach(viewModel.callbackStrings, id: \.self) { listItem in
                             Text(listItem)
                         }
-                    }
+                    }                .padding(.trailing, 16)
+
                     .padding(.top, 0)
                     .listStyle(PlainListStyle())
                     .background(Color.white) // Set the background color of the list
@@ -162,13 +173,9 @@ struct AdView: View {
         case .rewarded:
             FYBRewarded.request(adType.placementId)
         case .banner:
-            break
-//            let bannerOptions = FYBBannerOptions(placementId: adType.placementId, size: .smart)
-//            FYBBanner.show(in: bannerView, options: bannerOptions)
+            shouldDisplayBanner = true
         case .mrec:
-            break
-//            let mrecOptions = FYBBannerOptions(placementId: mrecPlacementID, size: .MREC)
-//            FYBBanner.show(in: bannerView, options: mrecOptions)
+            shouldDisplayBanner = true
         }
 
         viewModel.isRequestLoading = true
@@ -181,13 +188,13 @@ struct AdView: View {
         case .rewarded:
             FYBRewarded.show(adType.placementId)
         case .banner:
-            break
-//            banner?.removeFromSuperview()
-//            adDismissed()
+            shouldDisplayBanner = false
+            viewModel.isAdAvailable = false
+            viewModel.isRequestLoading = false
         case .mrec:
-            break
-//            banner?.removeFromSuperview()
-//            adDismissed()
+            shouldDisplayBanner = false
+            viewModel.isAdAvailable = false
+            viewModel.isRequestLoading = false
         }
     }
 }
@@ -225,13 +232,9 @@ final class AdViewModel: NSObject, ObservableObject {
                 isAdAvailable = true
             }
         case .banner:
-            break
-//            FYBBanner.delegate = self
-//            placementIdLabel.text = bannerPlacementID
+            FYBBanner.delegate = self
         case .mrec:
-            break
-//            FYBBanner.delegate = self
-//            placementIdLabel.text = mrecPlacementID
+            FYBBanner.delegate = self
         }
     }
 
@@ -278,18 +281,17 @@ extension AdViewModel: FYBInterstitialDelegate {
     func interstitialDidFinishAudio() {
         addEventToCallbacksList(#function)
     }
-
 }
 
 extension AdViewModel: FYBRewardedDelegate {
 
     func rewardedIsAvailable(_ placementName: String) {
-//        adIsAvailable()
+        isAdAvailable = false
         addEventToCallbacksList(#function)
     }
 
     func rewardedIsUnavailable(_ placementName: String) {
-//        adDismissed()
+        isAdAvailable = false
         addEventToCallbacksList(#function)
     }
 
@@ -310,7 +312,7 @@ extension AdViewModel: FYBRewardedDelegate {
     }
 
     func rewardedDidDismiss(_ placementName: String) {
-//        adDismissed()
+        isAdAvailable = false
         addEventToCallbacksList(#function)
     }
 
@@ -321,44 +323,63 @@ extension AdViewModel: FYBRewardedDelegate {
     func rewardedDidFinishAudio() {
         addEventToCallbacksList(#function)
     }
-
 }
 
 extension AdViewModel: FYBBannerDelegate {
 
     func bannerDidLoad(_ banner: FYBBannerAdView) {
-//        self.banner = banner
-//        bannerHeight.constant = banner.bounds.height + 20
-//        adIsAvailable()
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func bannerDidFail(toLoad placementName: String, withError error: Error) {
-//        addEventToCallbacksList(#function)
-//        adDismissed()
+        addEventToCallbacksList(#function)
+        isAdAvailable = false
     }
 
     func bannerDidShow(_ banner: FYBBannerAdView, impressionData: FYBImpressionData) {
-//        addEventToCallbacksList(#function)
+        isAdAvailable = true
+        addEventToCallbacksList(#function)
     }
 
     func bannerDidClick(_ banner: FYBBannerAdView) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func bannerWillPresentModalView(_ banner: FYBBannerAdView) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func bannerDidDismissModalView(_ banner: FYBBannerAdView) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func bannerWillLeaveApplication(_ banner: FYBBannerAdView) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
     }
 
     func banner(_ banner: FYBBannerAdView, didResizeToFrame frame: CGRect) {
-//        addEventToCallbacksList(#function)
+        addEventToCallbacksList(#function)
+    }
+}
+
+struct BannerView: UIViewRepresentable {
+    @Binding var shouldDisplayBanner: Bool
+    @Binding var isAdAvailable: Bool
+
+    var bannerOptions: FYBBannerOptions
+
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+
+        return view
+    }
+
+    func updateUIView(_ uiView: UIView, context: Context) {
+        if shouldDisplayBanner && !isAdAvailable {
+            FYBBanner.show(in: uiView, options: bannerOptions)
+        } else if !shouldDisplayBanner && !isAdAvailable {
+            FYBBanner.hide(bannerOptions.placementId)
+        }
     }
 }

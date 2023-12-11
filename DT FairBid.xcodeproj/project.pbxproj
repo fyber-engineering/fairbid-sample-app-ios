@@ -18,7 +18,6 @@
 		2D0CD72F23312C1900D6168A /* AdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72E23312C1900D6168A /* AdType.swift */; };
 		9D7F1E022B1E0BC70084444D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F1E012B1E0BC70084444D /* MainView.swift */; };
 		9D7F1E042B1E161E0084444D /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F1E032B1E161E0084444D /* MainApp.swift */; };
-		9D7F1E062B1E1CF80084444D /* AdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F1E052B1E1CF80084444D /* AdScreen.swift */; };
 		9D7F1E0A2B1E1D1D0084444D /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F1E092B1E1D1D0084444D /* AdView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		2D0CD72E23312C1900D6168A /* AdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdType.swift; sourceTree = "<group>"; };
 		9D7F1E012B1E0BC70084444D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9D7F1E032B1E161E0084444D /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
-		9D7F1E052B1E1CF80084444D /* AdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdScreen.swift; sourceTree = "<group>"; };
 		9D7F1E092B1E1D1D0084444D /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		A627335B313B8DEB03559FA3 /* Pods-DT FairBid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT FairBid.debug.xcconfig"; path = "Target Support Files/Pods-DT FairBid/Pods-DT FairBid.debug.xcconfig"; sourceTree = "<group>"; };
 		D42880A064E598CD1B290DF3 /* Pods-DT FairBid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT FairBid.release.xcconfig"; path = "Target Support Files/Pods-DT FairBid/Pods-DT FairBid.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		9D7F1E082B1E1D080084444D /* Ad View */ = {
 			isa = PBXGroup;
 			children = (
-				9D7F1E052B1E1CF80084444D /* AdScreen.swift */,
 				9D7F1E092B1E1D1D0084444D /* AdView.swift */,
 			);
 			path = "Ad View";
@@ -275,7 +272,6 @@
 				11F8A9432247E91400A816F2 /* AppDelegate.swift in Sources */,
 				2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */,
 				9D7F1E0A2B1E1D1D0084444D /* AdView.swift in Sources */,
-				9D7F1E062B1E1CF80084444D /* AdScreen.swift in Sources */,
 				2D0CD72D23312BF800D6168A /* HeadlineTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

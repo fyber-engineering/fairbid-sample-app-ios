@@ -4,6 +4,8 @@
 //
 //
 
+import CoreGraphics
+
 enum AdType: String, CaseIterable {
     case interstitial = "Interstitial"
     case rewarded = "Rewarded"
@@ -13,7 +15,7 @@ enum AdType: String, CaseIterable {
     var placementId: String {
         switch self {
         case .interstitial:
-            return "213766"//"197405"
+            return "197405"
         case .rewarded:
             return "197406"
         case .banner:
@@ -46,6 +48,32 @@ enum AdType: String, CaseIterable {
             return "Destroy"
         case .mrec:
             return "Destroy"
+        }
+    }
+
+    var needsBannerView : Bool {
+        switch self {
+        case .interstitial:
+            return false
+        case .rewarded:
+            return false
+        case .banner:
+            return true
+        case .mrec:
+            return true
+        }
+    }
+
+    var bannerViewHeight : CGFloat {
+        switch self {
+        case .interstitial:
+            return 0.0
+        case .rewarded:
+            return 0.0
+        case .banner:
+            return 50.0
+        case .mrec:
+            return 90.0
         }
     }
 }
