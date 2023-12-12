@@ -1,8 +1,8 @@
 //
-//  MainApp.swift
-//  DT FairBid
+//  SwiftuiApp.swift
+//  Swiftui
 //
-//  Created by Stanislav Tomych on 04.12.2023.
+//  Created by Stanislav Tomych on 12.12.2023.
 //  Copyright © 2023 Fyber. All rights reserved.
 //
 
