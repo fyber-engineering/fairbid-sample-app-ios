@@ -5,3 +5,9 @@ target 'DT FairBid' do
   project "DT FairBid"
   pod 'FairBidSDK', '3.45.0'
 end
+
+target 'DT SwiftUI' do
+  use_frameworks!
+  project "DT FairBid"
+  pod 'FairBidSDK', '3.45.0'
+end
