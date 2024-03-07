@@ -16,6 +16,8 @@
 		2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A528C62225A39E300AD37E7 /* AdsScreenViewController.swift */; };
 		2D0CD72D23312BF800D6168A /* HeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72C23312BF800D6168A /* HeadlineTableViewCell.swift */; };
 		2D0CD72F23312C1900D6168A /* AdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CD72E23312C1900D6168A /* AdType.swift */; };
+		91E0CE8C2B99F225005B7B67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E0CE8B2B99F225005B7B67 /* Constants.swift */; };
+		91E0CE8D2B99F52B005B7B67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E0CE8B2B99F225005B7B67 /* Constants.swift */; };
 		9D2F501E2B2866EA00230369 /* SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2F501D2B2866EA00230369 /* SwiftUIApp.swift */; };
 		9D2F50222B2866EC00230369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D2F50212B2866EC00230369 /* Assets.xcassets */; };
 		9D2F50252B2866EC00230369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D2F50242B2866EC00230369 /* Preview Assets.xcassets */; };
@@ -39,6 +41,7 @@
 		2D0CD72E23312C1900D6168A /* AdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdType.swift; sourceTree = "<group>"; };
 		6BA31203F88B631911BD640B /* Pods-Swiftui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftui.debug.xcconfig"; path = "Target Support Files/Pods-Swiftui/Pods-Swiftui.debug.xcconfig"; sourceTree = "<group>"; };
 		8635A12997747A5E44F92480 /* Pods-DT SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		91E0CE8B2B99F225005B7B67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		977EAA8DF4117154B1A5B6E0 /* Pods-DT SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		978BE4CA8169936AB9F6FC0A /* Pods_DT_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DT_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D2F501B2B2866EA00230369 /* DT SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DT SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +80,7 @@
 			children = (
 				11F8A9412247E91400A816F2 /* DT FairBid */,
 				9D2F501C2B2866EA00230369 /* SwiftUI */,
+				91E0CE8B2B99F225005B7B67 /* Constants.swift */,
 				11F8A9402247E91400A816F2 /* Products */,
 				32ABDC3DBDD0662A5E9B6072 /* Pods */,
 				E31833E32EFBDB63488AA07C /* Frameworks */,
@@ -377,6 +381,7 @@
 				11F8A9432247E91400A816F2 /* AppDelegate.swift in Sources */,
 				2A528C63225A39E300AD37E7 /* AdsScreenViewController.swift in Sources */,
 				2D0CD72D23312BF800D6168A /* HeadlineTableViewCell.swift in Sources */,
+				91E0CE8D2B99F52B005B7B67 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91E0CE8C2B99F225005B7B67 /* Constants.swift in Sources */,
 				9D2F502B2B28678A00230369 /* AdView.swift in Sources */,
 				9D2F50292B28675700230369 /* MainView.swift in Sources */,
 				9D2F502A2B28676C00230369 /* AdType.swift in Sources */,

@@ -11,11 +11,6 @@ class AdsScreenViewController: UIViewController {
 
     var adType: AdType!
 
-    private let interstitialPlacementID = "197405"
-    private let rewardedPlacementID = "197406"
-    private let bannerPlacementID = "197407"
-    private let mrecPlacementID = "936586"
-
     let formatter = DateFormatter()
 
     private var banner: FYBBannerAdView?
@@ -44,41 +39,34 @@ class AdsScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                
         formatter.dateFormat = "HH:mm:ss"
 
         showButton.disable()
+        
         switch adType! {
         case .interstitial:
             FYBInterstitial.delegate = self
-            placementIdLabel.text = interstitialPlacementID
-            if FYBInterstitial.isAvailable(interstitialPlacementID) {
+            if FYBInterstitial.isAvailable(adType.placementId) {
                 adIsAvailable()
             }
         case .rewarded:
             FYBRewarded.delegate = self
-            placementIdLabel.text = rewardedPlacementID
-            if FYBRewarded.isAvailable(rewardedPlacementID) {
+            if FYBRewarded.isAvailable(adType.placementId) {
                 adIsAvailable()
             }
         case .banner:
             FYBBanner.delegate = self
-            placementIdLabel.text = bannerPlacementID
         case .mrec:
             FYBBanner.delegate = self
-            placementIdLabel.text = mrecPlacementID
         }
+        
+        placementIdLabel.text = adType.placementId
+        
+        requestButton.setTitle(adType.leftButtonText, for: .normal)
+        showButton.setTitle(adType.rightButtonText, for: .normal)
 
-        if adType! == .banner {
-            requestButton.setTitle("Show", for: .normal)
-            showButton.setTitle("Destroy", for: .normal)
-        } else if adType! == .mrec {
-            requestButton.setTitle("Show", for: .normal)
-            showButton.setTitle("Destroy", for: .normal)
-        } else {
-            requestButton.setTitle("Request", for: .normal)
-            showButton.setTitle("Show", for: .normal)
-
+        if adType == .interstitial || adType == .rewarded {
             bannerView.removeFromSuperview()
         }
 
@@ -95,14 +83,14 @@ class AdsScreenViewController: UIViewController {
     @IBAction func requestAdClicked(_ sender: Any) {
         switch adType! {
         case .interstitial:
-            FYBInterstitial.request(interstitialPlacementID)
+            FYBInterstitial.request(adType.placementId)
         case .rewarded:
-            FYBRewarded.request(rewardedPlacementID)
+            FYBRewarded.request(adType.placementId)
         case .banner:
-            let bannerOptions = FYBBannerOptions(placementId: bannerPlacementID, size: .smart)
+            let bannerOptions = FYBBannerOptions(placementId: adType.placementId, size: .smart)
             FYBBanner.show(in: bannerView, options: bannerOptions)
         case .mrec:
-            let mrecOptions = FYBBannerOptions(placementId: mrecPlacementID, size: .MREC)
+            let mrecOptions = FYBBannerOptions(placementId: adType.placementId, size: .MREC)
             FYBBanner.show(in: bannerView, options: mrecOptions)
         }
 
@@ -112,9 +100,9 @@ class AdsScreenViewController: UIViewController {
     @IBAction func showOrDestroyAdClicked(_ sender: Any) {
         switch adType! {
         case .interstitial:
-            FYBInterstitial.show(interstitialPlacementID)
+            FYBInterstitial.show(adType.placementId)
         case .rewarded:
-            FYBRewarded.show(rewardedPlacementID)
+            FYBRewarded.show(adType.placementId)
         case .banner:
             banner?.removeFromSuperview()
             adDismissed()
@@ -318,11 +306,11 @@ private extension UIButton {
 
     func enable() {
         isEnabled = true
-        backgroundColor = UIColor(red: 29/255.0, green: 0/255.0, blue: 71/255.0, alpha: 1)
+        backgroundColor = Constants().primaryColor
     }
 
     func disable() {
         isEnabled = false
-        backgroundColor = UIColor(red: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
+        backgroundColor = Constants().disabledColor
     }
 }

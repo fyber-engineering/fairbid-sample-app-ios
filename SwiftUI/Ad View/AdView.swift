@@ -10,9 +10,9 @@ import FairBidSDK
 import SwiftUI
 
 struct AdView: View {
-    let primaryColor = UIColor(_colorLiteralRed: 29/255, green: 0/255, blue: 71/255, alpha: 1)
-    let backgroundColor = UIColor(_colorLiteralRed: 246/255, green: 246/255, blue: 247/255, alpha: 1.0)
-    let disabledColor = UIColor(_colorLiteralRed: 197/255.0, green: 208/255.0, blue: 222/255.0, alpha: 1)
+    let primaryColor = Constants().primaryColor
+    let backgroundColor = Constants().backgroundColor
+    let disabledColor = Constants().disabledColor
     @StateObject private var viewModel = AdViewModel(adType: .interstitial)
 
     let adType: AdType
