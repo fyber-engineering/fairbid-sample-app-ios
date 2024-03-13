@@ -10,14 +10,13 @@ import FairBidSDK
 import SwiftUI
 
 struct AdView: View {
-    let primaryColor = Constants().primaryColor
-    let backgroundColor = Constants().backgroundColor
-    let disabledColor = Constants().disabledColor
+    let primaryColor = Constants.primaryColor
+    let backgroundColor = Constants.backgroundColor
+    let disabledColor = Constants.disabledColor
     @StateObject private var viewModel = AdViewModel(adType: .interstitial)
 
     let adType: AdType
     @Environment(\.presentationMode) var presentationMode
-    @State var shouldDisplayBanner = false
 
     private var isBottomButtonVisible: Bool {
         return !viewModel.callbackStrings.isEmpty
@@ -101,7 +100,7 @@ struct AdView: View {
                 .padding(.trailing, 16)
                 .padding(.top, 10)
             if adType.needsBannerView {
-                BannerView(shouldDisplayBanner: $shouldDisplayBanner,
+                BannerView(shouldDisplayBanner: $viewModel.shouldDisplayBanner,
                            isAdAvailable: $viewModel.isAdAvailable, bannerOptions: FYBBannerOptions(placementId: adType.placementId, size: adType == .mrec ? .MREC : .smart))
                     .frame(height: adType.bannerViewHeight)
             }
@@ -173,9 +172,9 @@ struct AdView: View {
         case .rewarded:
             FYBRewarded.request(adType.placementId)
         case .banner:
-            shouldDisplayBanner = true
+            viewModel.shouldDisplayBanner = true
         case .mrec:
-            shouldDisplayBanner = true
+            viewModel.shouldDisplayBanner = true
         }
 
         viewModel.isRequestLoading = true
@@ -188,11 +187,11 @@ struct AdView: View {
         case .rewarded:
             FYBRewarded.show(adType.placementId)
         case .banner:
-            shouldDisplayBanner = false
+            viewModel.shouldDisplayBanner = false
             viewModel.isAdAvailable = false
             viewModel.isRequestLoading = false
         case .mrec:
-            shouldDisplayBanner = false
+            viewModel.shouldDisplayBanner = false
             viewModel.isAdAvailable = false
             viewModel.isRequestLoading = false
         }
@@ -207,6 +206,7 @@ final class AdViewModel: NSObject, ObservableObject {
     let adType: AdType
     @Published var isRequestLoading: Bool = false
     @Published var isAdAvailable: Bool = false
+    @Published var shouldDisplayBanner: Bool = false
     @Published var callbackStrings: [String] = []
 
     let formatter = DateFormatter()
@@ -286,12 +286,14 @@ extension AdViewModel: FYBInterstitialDelegate {
 extension AdViewModel: FYBRewardedDelegate {
 
     func rewardedIsAvailable(_ placementName: String) {
-        isAdAvailable = false
+        isAdAvailable = true
+        isRequestLoading = false
         addEventToCallbacksList(#function)
     }
 
     func rewardedIsUnavailable(_ placementName: String) {
         isAdAvailable = false
+        isRequestLoading = false
         addEventToCallbacksList(#function)
     }
 
@@ -332,8 +334,9 @@ extension AdViewModel: FYBBannerDelegate {
     }
 
     func bannerDidFail(toLoad placementName: String, withError error: Error) {
-        addEventToCallbacksList(#function)
         isAdAvailable = false
+        shouldDisplayBanner = false
+        addEventToCallbacksList(#function)
     }
 
     func bannerDidShow(_ banner: FYBBannerAdView, impressionData: FYBImpressionData) {

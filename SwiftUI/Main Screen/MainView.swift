@@ -11,8 +11,8 @@ import SwiftUI
 
 struct MainView: View {
     let section1Data = [AdType.interstitial.rawValue, AdType.rewarded.rawValue, AdType.banner.rawValue, AdType.mrec.rawValue]
-    let section2Data = [Constants().testSuiteTitle]
-    let backgroundColor = Constants().backgroundColor
+    let section2Data = [Constants.testSuiteTitle]
+    let backgroundColor = Constants.backgroundColor
 
     var body: some View {
         NavigationView {
@@ -49,7 +49,7 @@ struct HeaderView: View {
         VStack(alignment: .center, spacing: 8.0) {
             HStack(alignment: .center, content: {
                 Spacer()
-                Text(Constants().title)
+                Text(Constants.title)
                     .font(.system(size: 32))
                     .fontWeight(.regular)
                     .foregroundColor(Color.black)
@@ -59,7 +59,7 @@ struct HeaderView: View {
             })
             HStack(alignment: .center, content: {
                 Spacer()
-                Text(Constants().subtitle + FairBid.version())
+                Text(Constants.subtitle + FairBid.version())
                     .font(.system(size: 17, weight: .semibold))
                     .foregroundColor(Color(UIColor.darkGray))
                     .textCase(nil)

@@ -306,11 +306,11 @@ private extension UIButton {
 
     func enable() {
         isEnabled = true
-        backgroundColor = Constants().primaryColor
+        backgroundColor = Constants.primaryColor
     }
 
     func disable() {
         isEnabled = false
-        backgroundColor = Constants().disabledColor
+        backgroundColor = Constants.disabledColor
     }
 }

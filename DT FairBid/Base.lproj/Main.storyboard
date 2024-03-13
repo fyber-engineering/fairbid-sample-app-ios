@@ -307,6 +307,7 @@
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.11372549019607843" green="0.0" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
