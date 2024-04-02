@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var adUnitsTable: UITableView!
     @IBOutlet var versionLabel: UILabel!
 
@@ -17,7 +18,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         adUnitsTable.tableFooterView = UIView(frame: .zero)
-        versionLabel.text = "DT FairBid " + FairBid.version()
+        titleLabel.text = Constants.title
+        versionLabel.text = Constants.subtitle + FairBid.version()
+        view.backgroundColor = Constants.backgroundColor
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +47,7 @@ extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 4
+            return AdType.allCases.count
         } else {
             return 1
         }
@@ -59,7 +62,7 @@ extension ViewController: UITableViewDataSource {
     private func configure(cell: UITableViewCell, at indexPath: IndexPath) {
         guard let cell = cell as? HeadlineTableViewCell else { return }
 
-        let text = objectType(at: indexPath)?.rawValue ?? "Test Suite"
+        let text = objectType(at: indexPath)?.rawValue ?? Constants.testSuiteTitle
 
         cell.unitLabel.text = text
         cell.unitImage.image = UIImage(named: text)
