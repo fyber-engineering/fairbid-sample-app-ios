@@ -104,10 +104,10 @@ class AdsScreenViewController: UIViewController {
         case .rewarded:
             FYBRewarded.show(adType.placementId)
         case .banner:
-            banner?.removeFromSuperview()
+            FYBBanner.destroy(adType.placementId)
             adDismissed()
         case .mrec:
-            banner?.removeFromSuperview()
+            FYBBanner.destroy(adType.placementId)
             adDismissed()
         }
     }
@@ -278,6 +278,8 @@ extension AdsScreenViewController: FYBBannerDelegate {
 
     func bannerDidShow(_ banner: FYBBannerAdView, impressionData: FYBImpressionData) {
         addEventToCallbacksList(#function)
+        requestButton.disable()
+        showButton.enable()
     }
 
     func bannerDidClick(_ banner: FYBBannerAdView) {
