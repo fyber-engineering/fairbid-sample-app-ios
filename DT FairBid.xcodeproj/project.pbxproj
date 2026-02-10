@@ -50,6 +50,7 @@
 		9D2F50242B2866EC00230369 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D7F1E012B1E0BC70084444D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9D7F1E092B1E1D1D0084444D /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
+		9D7F1E0A2B1E1D1E0084444D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A627335B313B8DEB03559FA3 /* Pods-DT FairBid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT FairBid.debug.xcconfig"; path = "Target Support Files/Pods-DT FairBid/Pods-DT FairBid.debug.xcconfig"; sourceTree = "<group>"; };
 		D42880A064E598CD1B290DF3 /* Pods-DT FairBid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DT FairBid.release.xcconfig"; path = "Target Support Files/Pods-DT FairBid/Pods-DT FairBid.release.xcconfig"; sourceTree = "<group>"; };
 		E467FBD983C1DD6DBAF6A7A6 /* Pods-Swiftui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftui.release.xcconfig"; path = "Target Support Files/Pods-Swiftui/Pods-Swiftui.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 				9D2F501D2B2866EA00230369 /* SwiftUIApp.swift */,
 				9D2F50212B2866EC00230369 /* Assets.xcassets */,
 				9D2F50232B2866EC00230369 /* Preview Content */,
+				9D7F1E0A2B1E1D1E0084444D /* Info.plist */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 			buildConfigurationList = 9D2F50282B2866EC00230369 /* Build configuration list for PBXNativeTarget "DT SwiftUI" */;
 			buildPhases = (
 				2B0CF493F5C8A54EB8B7E650 /* [CP] Check Pods Manifest.lock */,
+				91A519C52F3B659900CEF1C2 /* ShellScript */,
 				9D2F50172B2866EA00230369 /* Sources */,
 				9D2F50182B2866EA00230369 /* Frameworks */,
 				9D2F50192B2866EA00230369 /* Resources */,
@@ -304,9 +307,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -343,14 +350,35 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		91A519C52F3B659900CEF1C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v skad_updater &> /dev/null\nthen\n    PLIST_PATH=\"${SRCROOT}/${INFOPLIST_FILE}\"\n    PODFILE_PATH=\"${SRCROOT}/Podfile\"\n    echo \"Updating SKAdNetworkItems in: ${PLIST_PATH}\"\n    skad_updater --plist_file_path \"${PLIST_PATH}\" --network_list=FairBidSDK --pod_file_path \"${PODFILE_PATH}\"\n    plutil -convert xml1 \"${PLIST_PATH}\"\nelse\n    echo \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
 		};
 		AE7457C625A7506200EB3831 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -367,7 +395,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if command -v skad_updater &> /dev/null\nthen\necho \"$INFOPLIST_FILE\" | sed 's/ /\\\\ /g' | (read SANITIZED_PATH; skad_updater --plist_file_path \"$SANITIZED_PATH\" --network_list=FairBidSDK --pod_file_path ./Podfile; plutil -convert xml1 \"$SANITIZED_PATH\")\nelse\necho \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
+			shellScript = "if command -v skad_updater &> /dev/null\nthen\n    PLIST_PATH=\"${SRCROOT}/${INFOPLIST_FILE}\"\n    PODFILE_PATH=\"${SRCROOT}/Podfile\"\n    echo \"Updating SKAdNetworkItems in: ${PLIST_PATH}\"\n    skad_updater --plist_file_path \"${PLIST_PATH}\" --network_list=FairBidSDK --pod_file_path \"${PODFILE_PATH}\"\n    plutil -convert xml1 \"${PLIST_PATH}\"\nelse\n    echo \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -610,12 +638,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = SwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -647,12 +670,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = SwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
