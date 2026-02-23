@@ -185,6 +185,7 @@
 				11F8A93C2247E91400A816F2 /* Frameworks */,
 				11F8A93D2247E91400A816F2 /* Resources */,
 				390A3DC034E3A3B19060297A /* [CP] Embed Pods Frameworks */,
+				7D361F2D57682CC8E47FE32B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +206,7 @@
 				9D2F50182B2866EA00230369 /* Frameworks */,
 				9D2F50192B2866EA00230369 /* Resources */,
 				6F5EB1D0D76AAF2A673D40DC /* [CP] Embed Pods Frameworks */,
+				C209A5B6AC3EF5F5C342E7AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -363,6 +365,27 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7D361F2D57682CC8E47FE32B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		91A519C52F3B659900CEF1C2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,7 +401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if command -v skad_updater &> /dev/null\nthen\n    PLIST_PATH=\"${SRCROOT}/${INFOPLIST_FILE}\"\n    PODFILE_PATH=\"${SRCROOT}/Podfile\"\n    echo \"Updating SKAdNetworkItems in: ${PLIST_PATH}\"\n    skad_updater --plist_file_path \"${PLIST_PATH}\" --network_list=FairBidSDK --pod_file_path \"${PODFILE_PATH}\"\n    plutil -convert xml1 \"${PLIST_PATH}\"\nelse\n    echo \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
+			shellScript = "SKAD_UPDATER=\"\"\nif command -v skad_updater &> /dev/null; then\n    SKAD_UPDATER=\"skad_updater\"\nelif [ -x \"/opt/homebrew/bin/skad_updater\" ]; then\n    SKAD_UPDATER=\"/opt/homebrew/bin/skad_updater\"\nfi\n\nif [ -n \"$SKAD_UPDATER\" ]; then\n    PLIST_PATH=\"${SRCROOT}/${INFOPLIST_FILE}\"\n    PODFILE_PATH=\"${SRCROOT}/Podfile\"\n    echo \"Updating SKAdNetworkItems in: ${PLIST_PATH}\"\n    \"$SKAD_UPDATER\" --plist_file_path \"${PLIST_PATH}\" --network_list=FairBidSDK --pod_file_path \"${PODFILE_PATH}\"\n    plutil -convert xml1 \"${PLIST_PATH}\"\nelse\n    echo \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
 		};
 		AE7457C625A7506200EB3831 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -395,7 +418,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if command -v skad_updater &> /dev/null\nthen\n    PLIST_PATH=\"${SRCROOT}/${INFOPLIST_FILE}\"\n    PODFILE_PATH=\"${SRCROOT}/Podfile\"\n    echo \"Updating SKAdNetworkItems in: ${PLIST_PATH}\"\n    skad_updater --plist_file_path \"${PLIST_PATH}\" --network_list=FairBidSDK --pod_file_path \"${PODFILE_PATH}\"\n    plutil -convert xml1 \"${PLIST_PATH}\"\nelse\n    echo \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
+			shellScript = "SKAD_UPDATER=\"\"\nif command -v skad_updater &> /dev/null; then\n    SKAD_UPDATER=\"skad_updater\"\nelif [ -x \"/opt/homebrew/bin/skad_updater\" ]; then\n    SKAD_UPDATER=\"/opt/homebrew/bin/skad_updater\"\nfi\n\nif [ -n \"$SKAD_UPDATER\" ]; then\n    PLIST_PATH=\"${SRCROOT}/${INFOPLIST_FILE}\"\n    PODFILE_PATH=\"${SRCROOT}/Podfile\"\n    echo \"Updating SKAdNetworkItems in: ${PLIST_PATH}\"\n    \"$SKAD_UPDATER\" --plist_file_path \"${PLIST_PATH}\" --network_list=FairBidSDK --pod_file_path \"${PODFILE_PATH}\"\n    plutil -convert xml1 \"${PLIST_PATH}\"\nelse\n    echo \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
+		};
+		C209A5B6AC3EF5F5C342E7AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
