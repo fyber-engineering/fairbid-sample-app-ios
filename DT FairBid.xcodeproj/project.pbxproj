@@ -184,14 +184,15 @@
 				11F8A93B2247E91400A816F2 /* Sources */,
 				11F8A93C2247E91400A816F2 /* Frameworks */,
 				11F8A93D2247E91400A816F2 /* Resources */,
-				390A3DC034E3A3B19060297A /* [CP] Embed Pods Frameworks */,
-				7D361F2D57682CC8E47FE32B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "DT FairBid";
+			packageProductDependencies = (
+				3862692346E9FF38373696C7 /* FairBidSDK */,
+			);
 			productName = "Fyber FairBid";
 			productReference = 11F8A93F2247E91400A816F2 /* DT FairBid.app */;
 			productType = "com.apple.product-type.application";
@@ -205,8 +206,6 @@
 				9D2F50172B2866EA00230369 /* Sources */,
 				9D2F50182B2866EA00230369 /* Frameworks */,
 				9D2F50192B2866EA00230369 /* Resources */,
-				6F5EB1D0D76AAF2A673D40DC /* [CP] Embed Pods Frameworks */,
-				C209A5B6AC3EF5F5C342E7AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +245,9 @@
 				Base,
 			);
 			mainGroup = 11F8A9362247E91400A816F2;
+			packageReferences = (
+				7CC62A8062491B80D10851AC /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */,
+			);
 			productRefGroup = 11F8A9402247E91400A816F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,27 +303,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		390A3DC034E3A3B19060297A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		473C43C3C95B30C4E55848B7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,48 +323,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6F5EB1D0D76AAF2A673D40DC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D361F2D57682CC8E47FE32B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT FairBid/Pods-DT FairBid-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91A519C52F3B659900CEF1C2 /* ShellScript */ = {
@@ -419,27 +358,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "SKAD_UPDATER=\"\"\nif command -v skad_updater &> /dev/null; then\n    SKAD_UPDATER=\"skad_updater\"\nelif [ -x \"/opt/homebrew/bin/skad_updater\" ]; then\n    SKAD_UPDATER=\"/opt/homebrew/bin/skad_updater\"\nfi\n\nif [ -n \"$SKAD_UPDATER\" ]; then\n    PLIST_PATH=\"${SRCROOT}/${INFOPLIST_FILE}\"\n    PODFILE_PATH=\"${SRCROOT}/Podfile\"\n    echo \"Updating SKAdNetworkItems in: ${PLIST_PATH}\"\n    \"$SKAD_UPDATER\" --plist_file_path \"${PLIST_PATH}\" --network_list=FairBidSDK --pod_file_path \"${PODFILE_PATH}\"\n    plutil -convert xml1 \"${PLIST_PATH}\"\nelse\n    echo \"warning: 'skad_updater' not found. More information: https://github.com/fyber-engineering/SKAd_updater\"\nfi\n";
-		};
-		C209A5B6AC3EF5F5C342E7AC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DT SwiftUI/Pods-DT SwiftUI-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -628,6 +546,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
@@ -656,6 +578,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Fyber.Fyber-FairBid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -761,6 +687,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7CC62A8062491B80D10851AC /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DigitalTurbine/FairBid-iOS-SPM";
+			requirement = {
+				kind = exactVersion;
+				version = 3.68.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3862692346E9FF38373696C7 /* FairBidSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CC62A8062491B80D10851AC /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */;
+			productName = FairBidSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11F8A9372247E91400A816F2 /* Project object */;
 }
