@@ -199,6 +199,7 @@
 				97A46C61A9152DF8407F8145 /* FairBidSDK */,
 				519D401BA57BB1A4BDE3E4BE /* FairBidSDK */,
 				B1B6EB1E5D229898C9A28D87 /* FairBidSDK */,
+				5B30603FDF3DBAB6364D9CB1 /* FairBidSDK */,
 			);
 			productName = "Fyber FairBid";
 			productReference = 11F8A93F2247E91400A816F2 /* DT FairBid.app */;
@@ -261,6 +262,7 @@
 				7104AC26621D44CFED5B158D /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */,
 				6369496098AC2767CB5B9DBA /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */,
 				C6E92F43A1B800389CCF3F7B /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */,
+				E4BF234D85606D664030F6BA /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */,
 			);
 			productRefGroup = 11F8A9402247E91400A816F2 /* Products */;
 			projectDirPath = "";
@@ -767,6 +769,14 @@
 				version = 3.68.0;
 			};
 		};
+		E4BF234D85606D664030F6BA /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DigitalTurbine/FairBid-iOS-SPM";
+			requirement = {
+				kind = exactVersion;
+				version = 3.68.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -783,6 +793,11 @@
 		519D401BA57BB1A4BDE3E4BE /* FairBidSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6369496098AC2767CB5B9DBA /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */;
+			productName = FairBidSDK;
+		};
+		5B30603FDF3DBAB6364D9CB1 /* FairBidSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4BF234D85606D664030F6BA /* XCRemoteSwiftPackageReference "FairBid-iOS-SPM" */;
 			productName = FairBidSDK;
 		};
 		637D93F2D650E580F3AB89E2 /* FairBidSDK */ = {
